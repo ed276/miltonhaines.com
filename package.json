@@ -2,6 +2,7 @@
   "name": "milton-haines-webcraft",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://ed276.github.io/miltonhaines.com/",
   "type": "module",
   "scripts": {
     "dev": "vite",
