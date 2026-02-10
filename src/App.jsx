@@ -1,0 +1,34 @@
+
+import React, { useState } from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import FeatureMosaic from './components/FeatureMosaic';
+import SeoAiDiscovery from './components/SeoAiDiscovery';
+import PricingEngine from './components/PricingEngine';
+import EfficiencyTable from './components/EfficiencyTable';
+import QnAModal from './components/QnAModal';
+import Footer from './components/Footer';
+
+function App() {
+    const [isQnAOpen, setIsQnAOpen] = useState(false);
+
+    return (
+        <div className="bg-void min-h-screen text-white font-sans overflow-x-hidden selection:bg-primary-gold selection:text-void">
+            <Header />
+
+            <main>
+                <Hero />
+                <FeatureMosaic />
+                <SeoAiDiscovery />
+                <EfficiencyTable />
+                <PricingEngine />
+            </main>
+
+            <Footer onOpenQnA={() => setIsQnAOpen(true)} />
+
+            <QnAModal isOpen={isQnAOpen} onClose={() => setIsQnAOpen(false)} />
+        </div>
+    );
+}
+
+export default App;
