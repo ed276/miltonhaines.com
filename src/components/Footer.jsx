@@ -12,10 +12,11 @@ const Footer = ({ onOpenQnA }) => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     <div className="col-span-1 md:col-span-1">
                         <div className="flex items-center space-x-2 mb-6">
-                            <div className="h-8 w-8 bg-gradient-to-br from-primary-gold to-yellow-600 rounded-sm flex items-center justify-center">
-                                <span className="font-heading font-black text-void text-xs">MH</span>
-                            </div>
-                            <span className="text-white font-heading font-bold">MILTONHAINES</span>
+                            <img
+                                src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/7c5be5e2-b40a-46e8-06d1-7ec8e7197900/public"
+                                alt="MiltonHaines WebCraft"
+                                className="h-10 w-auto object-contain"
+                            />
                         </div>
                         <p className="text-gray-500 text-sm leading-relaxed">
                             Constructing digital infrastructure for the modern enterprise. Built to last. Optimized for growth.

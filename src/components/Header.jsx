@@ -21,7 +21,7 @@ const Header = () => {
                 {/* LOGO */}
                 <a href="#" className="flex items-center space-x-2 group">
                     <img
-                        src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/0a9ff128-e579-4e36-8c43-709aa6367c00/public"
+                        src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/7c5be5e2-b40a-46e8-06d1-7ec8e7197900/public"
                         alt="MiltonHaines WebCraft"
                         className="h-10 w-auto object-contain"
                     />
