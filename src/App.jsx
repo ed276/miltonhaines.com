@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import WhyThisWorks from './components/WhyThisWorks';
 import FeatureMosaic from './components/FeatureMosaic';
 import ProcessTimeline from './components/ProcessTimeline';
 import SeoAiDiscovery from './components/SeoAiDiscovery';
@@ -20,6 +21,7 @@ function App() {
 
             <main>
                 <Hero />
+                <WhyThisWorks />
                 <FeatureMosaic />
                 <ProcessTimeline />
                 <SeoAiDiscovery />
