@@ -44,20 +44,9 @@ const Hero = () => {
 
             <div className="container mx-auto px-6 relative z-10 text-center">
                 <div ref={textRef}>
-                    <div className="inline-flex items-center space-x-2 border border-primary-gold/30 bg-primary-gold/5 backdrop-blur-sm px-4 py-1.5 rounded-full mb-8">
-                        <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-terminal-green opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-terminal-green"></span>
-                        </span>
-                        <span className="text-primary-gold text-xs font-mono tracking-widest uppercase">System Operational</span>
-                    </div>
-
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-heading mb-8 leading-tight tracking-tight">
-                        Built Like <span className="text-white relative">
+                        Built Like <span className="text-white">
                             Infrastructure
-                            <svg className="absolute w-full h-3 -bottom-1 left-0 text-primary-gold opacity-40" viewBox="0 0 100 10" preserveAspectRatio="none">
-                                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
-                            </svg>
                         </span>.<br />
                         Priced for <span className="text-white">Main Street</span>.
                     </h1>
