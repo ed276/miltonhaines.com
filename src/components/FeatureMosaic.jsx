@@ -8,17 +8,18 @@ const Card = ({ title, teaser, description, image, isHighlighted, isSecurity, su
             className={`
             relative rounded-sm overflow-hidden group transition-all duration-500
             ${isHighlighted ? 'border-primary-gold' : 'border-white/10 hover:border-primary-gold/50'}
-            bg-milton-black border flex flex-col
+            bg-void border flex flex-col
             ${isExpanded ? 'active-card z-40 scale-105 shadow-[0_0_50px_rgba(0,0,0,0.8)]' : 'hover:-translate-y-1 h-full'}
         `}
         >
             {/* Image Container */}
-            <div className="relative w-full overflow-hidden transition-all duration-700 h-48">
+            <div className={`relative w-full overflow-hidden transition-all duration-700 ${isExpanded ? 'h-48' : 'h-48'}`}>
                 {/* 1. Gentle Tint */}
                 <div className="absolute inset-0 bg-void/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
 
                 {/* 2. The Main Fade-to-Black Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-milton-black via-milton-black/90 to-transparent z-20"></div>
+                {/* Fixed: Used 'void' (which is #050505) instead of undefined 'milton-black' to ensure the gradient works */}
+                <div className="absolute inset-0 bg-gradient-to-t from-void via-void/90 to-transparent z-20"></div>
 
                 <img
                     src={image}
@@ -37,7 +38,8 @@ const Card = ({ title, teaser, description, image, isHighlighted, isSecurity, su
             </div>
 
             {/* Content Container - No negative margin to prevent overlap */}
-            <div className="p-6 relative z-30 flex-grow flex flex-col bg-milton-black">
+            {/* Fixed: bg-void ensures the card body matches the gradient bottom */}
+            <div className="p-6 relative z-30 flex-grow flex flex-col bg-void">
                 <h3 className={`text-xl font-heading font-bold mb-3 leading-tight ${isHighlighted ? 'text-primary-gold' : 'text-white'}`}>
                     {title}
                 </h3>
