@@ -20,15 +20,21 @@ const Header = () => {
             <div className="container mx-auto px-6 flex justify-between items-center">
                 {/* LOGO */}
                 <a href="#" className="perspective-1000 group">
-                    <div className={`transform transition-all duration-700 ease-out origin-top border border-white/10 rounded-sm overflow-hidden ${scrolled
-                        ? 'rotate-x-0 translate-y-0 shadow-none bg-void'
-                        : 'rotate-x-[25deg] translate-y-2 shadow-[0_20px_40px_rgba(0,0,0,0.6)] bg-black'
+                    <div className={`relative transform-style-3d transition-all duration-700 ease-out origin-top ${scrolled
+                        ? 'rotate-x-0'
+                        : '-rotate-x-90 translate-y-4'
                         }`}>
-                        <img
-                            src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/7c5be5e2-b40a-46e8-06d1-7ec8e7197900/public"
-                            alt="MiltonHaines WebCraft"
-                            className="h-10 w-auto object-contain"
-                        />
+                        {/* Front Face (Logo) */}
+                        <div className="bg-void border border-white/10 rounded-sm overflow-hidden h-12 w-auto flex items-center justify-center px-2 backface-hidden">
+                            <img
+                                src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/7c5be5e2-b40a-46e8-06d1-7ec8e7197900/public"
+                                alt="MiltonHaines WebCraft"
+                                className="h-10 w-auto object-contain"
+                            />
+                        </div>
+
+                        {/* Bottom Face (Thickness) */}
+                        <div className="absolute top-full left-0 w-full h-4 bg-primary-gold origin-top -rotate-x-90 brightness-75"></div>
                     </div>
                 </a>
 
