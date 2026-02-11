@@ -15,7 +15,7 @@ const Footer = ({ onOpenQnA }) => {
                             <img
                                 src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/7c5be5e2-b40a-46e8-06d1-7ec8e7197900/public"
                                 alt="MiltonHaines WebCraft"
-                                className="h-10 w-auto object-contain"
+                                className="h-10 w-auto object-contain drop-shadow-[0_0_12px_rgba(255,215,0,0.5)]"
                             />
                         </div>
                         <p className="text-gray-500 text-sm leading-relaxed">
