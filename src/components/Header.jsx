@@ -19,31 +19,17 @@ const Header = () => {
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 {/* LOGO CONTAINER */}
-                <div className="perspective-[1000px] group h-10 w-[140px]"> {/* Fixed dimensions for the stage */}
-                    <div className={`relative w-full h-full transition-all duration-700 ease-out transform-style-3d origin-center ${scrolled
-                        ? 'rotate-x-0'
-                        : 'rotate-x-90' /* Start rotated up */
-                        }`}>
+                <a href="#" className="group h-10 w-auto overflow-hidden rounded-sm relative">
+                    {/* Background Layer - Transitions from Transparent to Black */}
+                    <div className={`absolute inset-0 transition-colors duration-500 ${scrolled ? 'bg-black' : 'bg-transparent'}`}></div>
 
-                        {/* FRONT FACE (The Logo) */}
-                        <div className="absolute inset-0 bg-void border border-white/10 flex items-center justify-center backface-hidden translate-z-[20px]">
-                            <img
-                                src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/7c5be5e2-b40a-46e8-06d1-7ec8e7197900/public"
-                                alt="MiltonHaines WebCraft"
-                                className="h-8 w-auto object-contain"
-                            />
-                        </div>
-
-                        {/* BOTTOM FACE (Gold) */}
-                        <div className="absolute inset-0 bg-primary-gold h-10 w-full origin-bottom rotate-x-90 translate-y-[20px] translate-z-[20px] brightness-75"></div>
-
-                        {/* TOP FACE (Darker Void) */}
-                        <div className="absolute inset-0 bg-black h-10 w-full origin-top -rotate-x-90 -translate-y-[20px] translate-z-[20px]"></div>
-
-                        {/* BACK FACE (Hidden) */}
-                        <div className="absolute inset-0 bg-void border border-white/10 rotate-y-180 translate-z-[20px]"></div>
-                    </div>
-                </div>
+                    {/* Image Layer */}
+                    <img
+                        src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/7c5be5e2-b40a-46e8-06d1-7ec8e7197900/public"
+                        alt="MiltonHaines WebCraft"
+                        className="h-10 w-auto object-contain relative z-10"
+                    />
+                </a>
 
                 {/* DESKTOP NAV */}
                 <nav className="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
