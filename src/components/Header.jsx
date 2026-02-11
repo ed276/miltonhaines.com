@@ -19,12 +19,17 @@ const Header = () => {
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 {/* LOGO */}
-                <a href="#" className="flex items-center space-x-2 group">
-                    <img
-                        src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/7c5be5e2-b40a-46e8-06d1-7ec8e7197900/public"
-                        alt="MiltonHaines WebCraft"
-                        className="h-10 w-auto object-contain drop-shadow-[0_0_12px_rgba(255,215,0,0.8)]"
-                    />
+                <a href="#" className="perspective-1000 group">
+                    <div className={`transform transition-all duration-700 ease-out origin-top border border-white/10 rounded-sm overflow-hidden ${scrolled
+                        ? 'rotate-x-0 translate-y-0 shadow-none bg-void'
+                        : 'rotate-x-[25deg] translate-y-2 shadow-[0_20px_40px_rgba(0,0,0,0.6)] bg-black'
+                        }`}>
+                        <img
+                            src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/7c5be5e2-b40a-46e8-06d1-7ec8e7197900/public"
+                            alt="MiltonHaines WebCraft"
+                            className="h-10 w-auto object-contain"
+                        />
+                    </div>
                 </a>
 
                 {/* DESKTOP NAV */}
