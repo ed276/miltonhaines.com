@@ -18,25 +18,32 @@ const Header = () => {
                 }`}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
-                {/* LOGO */}
-                <a href="#" className="perspective-1000 group">
-                    <div className={`relative transform-style-3d transition-all duration-700 ease-out origin-top ${scrolled
+                {/* LOGO CONTAINER */}
+                <div className="perspective-[1000px] group h-10 w-[140px]"> {/* Fixed dimensions for the stage */}
+                    <div className={`relative w-full h-full transition-all duration-700 ease-out transform-style-3d origin-center ${scrolled
                         ? 'rotate-x-0'
-                        : '-rotate-x-90 translate-y-4'
+                        : 'rotate-x-90' /* Start rotated up */
                         }`}>
-                        {/* Front Face (Logo) */}
-                        <div className="bg-void border border-white/10 rounded-sm overflow-hidden h-12 w-auto flex items-center justify-center px-2 backface-hidden">
+
+                        {/* FRONT FACE (The Logo) */}
+                        <div className="absolute inset-0 bg-void border border-white/10 flex items-center justify-center backface-hidden translate-z-[20px]">
                             <img
                                 src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/7c5be5e2-b40a-46e8-06d1-7ec8e7197900/public"
                                 alt="MiltonHaines WebCraft"
-                                className="h-10 w-auto object-contain"
+                                className="h-8 w-auto object-contain"
                             />
                         </div>
 
-                        {/* Bottom Face (Thickness) */}
-                        <div className="absolute top-full left-0 w-full h-4 bg-primary-gold origin-top -rotate-x-90 brightness-75"></div>
+                        {/* BOTTOM FACE (Gold) */}
+                        <div className="absolute inset-0 bg-primary-gold h-10 w-full origin-bottom rotate-x-90 translate-y-[20px] translate-z-[20px] brightness-75"></div>
+
+                        {/* TOP FACE (Darker Void) */}
+                        <div className="absolute inset-0 bg-black h-10 w-full origin-top -rotate-x-90 -translate-y-[20px] translate-z-[20px]"></div>
+
+                        {/* BACK FACE (Hidden) */}
+                        <div className="absolute inset-0 bg-void border border-white/10 rotate-y-180 translate-z-[20px]"></div>
                     </div>
-                </a>
+                </div>
 
                 {/* DESKTOP NAV */}
                 <nav className="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
