@@ -5,7 +5,7 @@ const Footer = ({ onOpenQnA }) => {
     return (
         <footer className="relative bg-void border-t border-white/10 pt-20 pb-10 overflow-hidden">
             {/* Background Overlay */}
-            <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/e2bd3af3-64b9-4ce9-ebda-4e5f12650b00/public')] bg-cover bg-center mix-blend-overlay"></div>
+            <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/a7a2630b-cc56-4ebc-8237-406ae7d2d400/public')] bg-cover bg-center mix-blend-overlay"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-void via-void/90 to-transparent z-10"></div>
 
             <div className="container mx-auto px-6 relative z-20">

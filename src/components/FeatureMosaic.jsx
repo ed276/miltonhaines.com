@@ -1,51 +1,53 @@
 
 import React from 'react';
 
-const Card = ({ title, description, icon, isHighlighted, isSecurity, colSpan = 1, rowSpan = 1 }) => {
+const Card = ({ title, description, image, isHighlighted, isSecurity, subtitle }) => {
     return (
         <div
             className={`
-            relative p-8 rounded-sm overflow-hidden group transition-all duration-500 hover:-translate-y-1
-            ${isHighlighted ? 'bg-gradient-to-br from-gray-900 to-black border border-primary-gold' : 'bg-void border border-white/10 hover:border-primary-gold/50'}
-            ${colSpan === 2 ? 'md:col-span-2' : ''}
-            ${rowSpan === 2 ? 'md:row-span-2' : ''}
-            backdrop-blur-sm
+            relative rounded-sm overflow-hidden group transition-all duration-500 hover:-translate-y-1
+            ${isHighlighted ? 'border-primary-gold' : 'border-white/10 hover:border-primary-gold/50'}
+            bg-milton-black border h-full flex flex-col
         `}
         >
-            {/* Glow Effect */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary-gold to-terminal-green opacity-0 group-hover:opacity-10 blur transition-opacity duration-500"></div>
-            <div className="absolute inset-[1px] bg-void rounded-sm z-0"></div>
+            {/* Image Container */}
+            <div className="relative h-48 w-full overflow-hidden">
+                <div className="absolute inset-0 bg-void/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                {/* Text Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-milton-black via-milton-black/50 to-transparent z-20"></div>
 
-            <div className="relative z-10 h-full flex flex-col">
+                <img
+                    src={image}
+                    alt={title}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                />
+
                 {isSecurity && (
-                    <div className="absolute top-0 right-0 p-2">
-                        <div className="flex items-center space-x-1 text-terminal-green text-[10px] font-mono border border-terminal-green/30 px-2 py-0.5 rounded-full bg-terminal-green/5">
+                    <div className="absolute top-2 right-2 z-30">
+                        <div className="flex items-center space-x-1 text-terminal-green text-[10px] font-mono border border-terminal-green/30 px-2 py-0.5 rounded-full bg-black/80 backdrop-blur-sm">
                             <span className="animate-pulse w-1.5 h-1.5 rounded-full bg-terminal-green"></span>
                             <span>ACTIVE FIREWALL</span>
                         </div>
                     </div>
                 )}
+            </div>
 
-                <div className="mb-6 opacity-80 group-hover:opacity-100 transition-opacity">
-                    {icon}
-                </div>
-
-                <h3 className={`text-xl font-heading font-bold mb-3 ${isHighlighted ? 'text-primary-gold' : 'text-white'}`}>
+            <div className="p-8 relative z-30 flex-grow flex flex-col -mt-12">
+                <h3 className={`text-xl font-heading font-bold mb-2 ${isHighlighted ? 'text-primary-gold' : 'text-white'}`}>
                     {title}
                 </h3>
+                {subtitle && (
+                    <p className="text-xs font-mono text-gray-400 mb-4">{subtitle}</p>
+                )}
 
                 <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
                     {description}
                 </p>
 
+                {/* Bottom Border/Highlight */}
                 {isHighlighted && (
                     <div className="mt-auto pt-4 border-t border-white/10">
                         <span className="text-xs font-mono text-primary-gold uppercase tracking-wider">Master Component</span>
-                    </div>
-                )}
-                {isSecurity && (
-                    <div className="mt-auto pt-4 border-t border-white/10">
-                        <span className="text-xs font-mono text-terminal-green uppercase tracking-wider">Bot Mitigation: Enabled</span>
                     </div>
                 )}
             </div>
@@ -56,61 +58,61 @@ const Card = ({ title, description, icon, isHighlighted, isSecurity, colSpan = 1
 const FeatureMosaic = () => {
     const features = [
         {
-            title: "Custom Infrastructure",
-            description: "Hand-crafted, production-grade architecture built from the ground up. No templates, no drag-and-drop bloat.",
-            icon: <svg className="w-8 h-8 text-primary-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>,
+            title: "Custom Website Build",
+            subtitle: "Built by experienced developers.",
+            description: "Every site is custom built using modern web standards. No templates, no drag-and-drop bloat.",
+            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/fa0fd452-1702-4d9e-49a7-79f9a72d7f00/public",
             isHighlighted: true,
-            colSpan: 1,
             id: 1
-        },
-        {
-            title: "Speed Optimization",
-            description: "Core Web Vitals focused development ensuring <1s load times via static generation and asset compression.",
-            icon: <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>,
-            id: 2
-        },
-        {
-            title: "Mobile First",
-            description: "Responsive design patterns that prioritize the mobile experience without compromising desktop functionality.",
-            icon: <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>,
-            id: 3
         },
         {
             title: "SEO Foundation",
             description: "Semantic HTML5, schema markup, and meta tag optimization baking discoverability into the code.",
-            icon: <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>,
+            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/a8cef1f5-fa0f-4a54-75b6-d24196935e00/public",
+            id: 2
+        },
+        {
+            title: "AI-Enhanced Structure",
+            description: "Leveraging AI for clear, simplified content structure and optimized user flow architecture.",
+            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/21c6cf0c-a2b0-49fe-6452-9428b10cd300/public",
+            id: 3
+        },
+        {
+            title: "Quarterly Updates",
+            description: "Regular updates to keep your content fresh and your technology secure.",
+            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/e1b0df87-4e48-4288-3b03-89d4ebd29600/public",
             id: 4
         },
         {
-            title: "Edge Security",
-            description: "Cloudflare integration with active firewall rules, DDoS protection, and automated bot mitigation strategies.",
-            icon: <svg className="w-8 h-8 text-terminal-green" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
+            title: "Security & Reliability",
+            description: "Your site is shielded by Cloudflare’s global edge network. We deploy active firewall rules to neutralize threats, unmetered DDoS protection, and automated bot mitigation.",
+            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/4cf5fecd-0024-41f6-ccf6-fe5fb796ed00/public",
             isSecurity: true,
-            colSpan: 2,
             id: 5
         },
         {
-            title: "Analytics Integration",
-            description: "Privacy-focused analytics setup to track conversion goals and user behavior patterns.",
-            icon: <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" /></svg>,
+            title: "Full Redesign",
+            description: "A complete visual and functional redesign every two years to ensure you stay ahead of the curve.",
+            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/e20ac0c3-48e9-4ccb-a6f3-98dce0777200/public",
             id: 6
         },
         {
-            title: "Content Strategy",
-            description: "Structured content modeling ensuring your message is clear, compelling, and consistent.",
-            icon: <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>,
+            title: "Launch & Domain",
+            description: "Seamless domain connection, SSL certification setup, and zero-downtime launch coordination.",
+            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/3c5e4b2c-8f99-4658-eb01-926936b43800/public",
             id: 7
         },
         {
-            title: "CMS Training",
-            description: "Comprehensive handover documentation and training sessions empowering your team.",
-            icon: <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>,
+            title: "Ongoing Human Support",
+            subtitle: "Real people, real responses.",
+            description: "No chatbots, no ticket systems. Direct access to the team that built your site. Typically responding within hours, not days.",
+            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/2bbba986-0576-4593-f492-83fd93062d00/public",
             id: 8
         }
     ];
 
     return (
-        <section id="features" className="py-32 bg-void relative">
+        <section id="whats-included" className="py-32 bg-void relative">
             <div className="container mx-auto px-6">
                 <div className="mb-16 text-center">
                     <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">What's Included</h2>
@@ -120,7 +122,7 @@ const FeatureMosaic = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {features.map((feature, index) => (
+                    {features.map((feature) => (
                         <Card key={feature.id} {...feature} />
                     ))}
                 </div>

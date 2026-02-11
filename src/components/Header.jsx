@@ -20,14 +20,11 @@ const Header = () => {
             <div className="container mx-auto px-6 flex justify-between items-center">
                 {/* LOGO */}
                 <a href="#" className="flex items-center space-x-2 group">
-                    <div className="h-10 w-10 bg-gradient-to-br from-primary-gold to-yellow-600 rounded-sm flex items-center justify-center relative overflow-hidden">
-                        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
-                        <span className="font-heading font-black text-void text-xl">MH</span>
-                    </div>
-                    <div className="flex flex-col">
-                        <span className="text-lg font-heading font-bold text-white tracking-tight leading-none">MILTONHAINES</span>
-                        <span className="text-xs font-heading font-medium text-primary-gold tracking-[0.2em] leading-none">WEBCRAFT</span>
-                    </div>
+                    <img
+                        src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/0a9ff128-e579-4e36-8c43-709aa6367c00/public"
+                        alt="MiltonHaines WebCraft"
+                        className="h-10 w-auto object-contain"
+                    />
                 </a>
 
                 {/* DESKTOP NAV */}

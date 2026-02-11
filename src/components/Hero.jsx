@@ -22,9 +22,24 @@ const Hero = () => {
 
     return (
         <section ref={heroRef} className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-            {/* Background Grip */}
-            <div className="absolute inset-0 bg-void z-0">
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_100%)]"></div>
+            {/* Background Images */}
+            <div className="absolute inset-0 z-0">
+                {/* Mobile Background */}
+                <img
+                    src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/b8cf9901-4f14-40be-4fa3-1291232b4b00/public"
+                    alt="Infrastructure Background"
+                    className="absolute inset-0 w-full h-full object-cover md:hidden opacity-40 mix-blend-luminosity"
+                />
+                {/* Desktop Background */}
+                <img
+                    src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/e2bd3af3-64b9-4ce9-ebda-4e5f12650b00/public"
+                    alt="Infrastructure Background"
+                    className="absolute inset-0 w-full h-full object-cover hidden md:block opacity-40 mix-blend-luminosity"
+                />
+
+                {/* Overlay Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-void via-void/80 to-transparent"></div>
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_100%)]"></div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10 text-center">
