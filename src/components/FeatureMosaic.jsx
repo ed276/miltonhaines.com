@@ -17,9 +17,8 @@ const Card = ({ title, teaser, description, image, isHighlighted, isSecurity, su
                 {/* 1. Gentle Tint */}
                 <div className="absolute inset-0 bg-void/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
 
-                {/* 2. The Main Fade-to-Black Gradient */}
-                {/* Fixed: Used 'void' (which is #050505) instead of undefined 'milton-black' to ensure the gradient works */}
-                <div className="absolute inset-0 bg-gradient-to-t from-void via-void/90 to-transparent z-20"></div>
+                {/* 2. The Main Fade-to-Black Gradient - Constrained to bottom */}
+                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-void to-transparent z-20"></div>
 
                 <img
                     src={image}
