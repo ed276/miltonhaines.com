@@ -28,9 +28,20 @@ const LogoCanvas = () => {
             }
 
             const loaded = await Promise.all(promises);
-            // Filter out failures and REVERSE to start from Tiled -> Flat
-            // (Assuming original sequence was Flat -> Tilted based on user feedback)
-            setImages(loaded.filter(Boolean));
+            // Reverse again as per user feedback ("It ends how we would like it to start")
+            // So we want the Tilted frames (which are at the start of the sequence) to be at the END of our scroll?
+            // Wait, if the sequence is 1=Tilted, 60=Flat.
+            // And we want Start=Tilted, End=Flat.
+            // Then we keep 1->60. (NO REVERSE)
+
+            // BUT, in previous turn I removed reverse and user said "It ends how we would like it to start".
+            // Implementation without reverse ended with Flat.
+            // User wants Start to be Flat? 
+            // "That [tilted] is still our starting position... it ends [flat] how we would like it to start".
+            // So User wants Start=Flat.
+            // So we need to reverse it so Frame 60 (Flat) becomes the first frame.
+            setImages(loaded.filter(Boolean).reverse());
+
             setIsLoaded(true);
         };
 
@@ -80,6 +91,7 @@ const LogoCanvas = () => {
         <canvas
             ref={canvasRef}
             className="h-full w-auto object-contain"
+            style={{ filter: 'contrast(1.25) brightness(0.75)' }} // Crush dark gray background to black for screen blend
         />
     );
 };
