@@ -13,19 +13,24 @@ const LogoCanvas = () => {
     // 1. Preload Images
     useEffect(() => {
         const loadImages = async () => {
-            const loadedImages = [];
+            const promises = [];
             for (let i = 1; i <= frameCount; i++) {
-                const img = new Image();
                 const filename = `ezgif-frame-${i.toString().padStart(3, '0')}.jpg`;
                 // Use BASE_URL to handle GitHub Pages subdirectory
-                img.src = `${import.meta.env.BASE_URL}logo-sequence/${filename}`;
-                await new Promise((resolve) => {
-                    img.onload = resolve;
-                    img.onerror = resolve; // Continue even if frame missing
-                });
-                loadedImages.push(img);
+                const src = `${import.meta.env.BASE_URL}logo-sequence/${filename}`;
+
+                promises.push(new Promise((resolve) => {
+                    const img = new Image();
+                    img.src = src;
+                    img.onload = () => resolve(img);
+                    img.onerror = () => resolve(null); // Handle errors gracefully
+                }));
             }
-            setImages(loadedImages);
+
+            const loaded = await Promise.all(promises);
+            // Filter out failures and REVERSE to start from Tiled -> Flat
+            // (Assuming original sequence was Flat -> Tilted based on user feedback)
+            setImages(loaded.filter(Boolean).reverse());
             setIsLoaded(true);
         };
 
@@ -42,6 +47,7 @@ const LogoCanvas = () => {
         // Initial Draw
         canvas.width = images[0].width;
         canvas.height = images[0].height;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(images[0], 0, 0);
 
         const render = (frameIndex) => {
@@ -68,12 +74,12 @@ const LogoCanvas = () => {
 
     }, [isLoaded, images]);
 
-    if (!isLoaded) return <div className="h-10 w-10 bg-transparent" />; // Placeholder
+    if (!isLoaded) return <div className="h-full w-full bg-transparent" />; // Placeholder
 
     return (
         <canvas
             ref={canvasRef}
-            className="h-10 w-auto object-contain"
+            className="h-full w-auto object-contain"
         />
     );
 };

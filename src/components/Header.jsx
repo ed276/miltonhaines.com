@@ -35,7 +35,7 @@ const Header = () => {
             }>
             <div className="container mx-auto px-6 flex justify-between items-center">
                 {/* LOGO CONTAINER */}
-                <a href="#" className="group h-10 w-auto overflow-hidden rounded-sm relative block">
+                <a href="#" className="group h-16 w-auto overflow-hidden rounded-sm relative block">
                     <LogoCanvas />
                 </a>
 
