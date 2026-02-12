@@ -10,34 +10,64 @@ const LogoCanvas = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     const frameCount = 60; // Actual frame count
 
-    // 1. Preload Images
+    // 1. Preload & Process Images (Chroma Key: Black -> Transparent)
     useEffect(() => {
-        const loadImages = async () => {
-            const promises = [];
+        const loadAndProcessImages = async () => {
+            const loadPromises = [];
+
+            // Helper to process image data: Turn black pixels transparent
+            const removeBlackBackground = async (img) => {
+                const canvas = document.createElement('canvas');
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0);
+
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const data = imageData.data;
+                const threshold = 40; // Pixel darkness threshold (0-255)
+
+                for (let i = 0; i < data.length; i += 4) {
+                    const r = data[i];
+                    const g = data[i + 1];
+                    const b = data[i + 2];
+
+                    // If pixel is dark enough, make it transparent
+                    if (r < threshold && g < threshold && b < threshold) {
+                        data[i + 3] = 0; // Alpha = 0
+                    }
+                }
+
+                return await createImageBitmap(imageData);
+            };
+
             for (let i = 1; i <= frameCount; i++) {
-                // Files are now PNGs according to list_dir
                 const filename = `ezgif-frame-${i.toString().padStart(3, '0')}.png`;
-                // Use BASE_URL to handle GitHub Pages subdirectory
                 const src = `${import.meta.env.BASE_URL}logo-sequence/${filename}`;
 
-                promises.push(new Promise((resolve) => {
+                loadPromises.push(new Promise(async (resolve) => {
                     const img = new Image();
+                    img.crossOrigin = "Anonymous"; // optimize for canvas
                     img.src = src;
-                    img.onload = () => resolve(img);
-                    img.onerror = () => resolve(null); // Handle errors gracefully
+                    img.onload = async () => {
+                        try {
+                            const processed = await removeBlackBackground(img);
+                            resolve(processed);
+                        } catch (e) {
+                            console.error("Frame processing failed", e);
+                            resolve(img); // Fallback to original
+                        }
+                    };
+                    img.onerror = () => resolve(null);
                 }));
             }
 
-            const loaded = await Promise.all(promises);
-            // User requested "End with logo facing straight forward".
-            // Assuming the sequence 001->060 ends in that state.
-            // Removing reverse() to play natural sequence.
-            setImages(loaded.filter(Boolean));
-
+            const processedFrames = await Promise.all(loadPromises);
+            setImages(processedFrames.filter(Boolean));
             setIsLoaded(true);
         };
 
-        loadImages();
+        loadAndProcessImages();
     }, []);
 
     // 2. Setup ScrollTrigger Animation
@@ -69,7 +99,7 @@ const LogoCanvas = () => {
             scrollTrigger: {
                 trigger: "body", // Scroll relative to entire page
                 start: "top top",
-                end: "+=400", // Matches Header opacity logic (increased to 400)
+                end: "+=400", // Matches Header opacity logic 
                 scrub: 0.5, // Smooth scrubbing
             },
             onUpdate: () => render(Math.round(scrollObj.frame))
@@ -82,8 +112,8 @@ const LogoCanvas = () => {
     return (
         <canvas
             ref={canvasRef}
-            className="h-full w-auto object-contain mix-blend-screen"
-            style={{ filter: 'contrast(1.25) brightness(0.75)' }}
+            className="h-full w-auto object-contain"
+        // Clean canvas, no CSS filters needed as transparency is baked in now
         />
     );
 };
