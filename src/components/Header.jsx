@@ -7,8 +7,8 @@ const Header = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            // Sync with LogoCanvas: 0 to 200px
-            const limit = 200;
+            // Sync with LogoCanvas: 0 to 300px (More runway for larger logo)
+            const limit = 300;
             const progress = Math.min(Math.max(window.scrollY / limit, 0), 1);
             setHeaderOpacity(progress);
         };
@@ -33,9 +33,9 @@ const Header = () => {
             style={bgStyle}
             className={`fixed top-0 w-full z-50 transition-all duration-100 ${isScrolled ? 'py-4' : 'py-6'} border-b border-transparent`
             }>
-            <div className="container mx-auto px-6 flex justify-between items-center">
+            <div className="container mx-auto px-6 flex justify-between items-center transition-all duration-300">
                 {/* LOGO CONTAINER */}
-                <a href="#" className="group h-16 w-auto overflow-hidden rounded-sm relative block">
+                <a href="#" className="group h-28 w-auto overflow-hidden rounded-sm relative block mix-blend-screen">
                     <LogoCanvas />
                 </a>
 

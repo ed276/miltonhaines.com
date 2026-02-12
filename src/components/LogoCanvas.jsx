@@ -30,7 +30,7 @@ const LogoCanvas = () => {
             const loaded = await Promise.all(promises);
             // Filter out failures and REVERSE to start from Tiled -> Flat
             // (Assuming original sequence was Flat -> Tilted based on user feedback)
-            setImages(loaded.filter(Boolean).reverse());
+            setImages(loaded.filter(Boolean));
             setIsLoaded(true);
         };
 
@@ -66,7 +66,7 @@ const LogoCanvas = () => {
             scrollTrigger: {
                 trigger: "body", // Scroll relative to entire page
                 start: "top top",
-                end: "+=200", // The "runway" we discussed
+                end: "+=300", // Matches Header opacity logic
                 scrub: 0.5, // Smooth scrubbing
             },
             onUpdate: () => render(Math.round(scrollObj.frame))
