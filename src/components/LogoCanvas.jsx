@@ -8,14 +8,15 @@ const LogoCanvas = () => {
     const canvasRef = useRef(null);
     const [images, setImages] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
-    const frameCount = 60; // Actual frame count from upload
+    const frameCount = 60; // Actual frame count
 
     // 1. Preload Images
     useEffect(() => {
         const loadImages = async () => {
             const promises = [];
             for (let i = 1; i <= frameCount; i++) {
-                const filename = `ezgif-frame-${i.toString().padStart(3, '0')}.jpg`;
+                // Files are now PNGs according to list_dir
+                const filename = `ezgif-frame-${i.toString().padStart(3, '0')}.png`;
                 // Use BASE_URL to handle GitHub Pages subdirectory
                 const src = `${import.meta.env.BASE_URL}logo-sequence/${filename}`;
 
@@ -28,19 +29,10 @@ const LogoCanvas = () => {
             }
 
             const loaded = await Promise.all(promises);
-            // Reverse again as per user feedback ("It ends how we would like it to start")
-            // So we want the Tilted frames (which are at the start of the sequence) to be at the END of our scroll?
-            // Wait, if the sequence is 1=Tilted, 60=Flat.
-            // And we want Start=Tilted, End=Flat.
-            // Then we keep 1->60. (NO REVERSE)
-
-            // BUT, in previous turn I removed reverse and user said "It ends how we would like it to start".
-            // Implementation without reverse ended with Flat.
-            // User wants Start to be Flat? 
-            // "That [tilted] is still our starting position... it ends [flat] how we would like it to start".
-            // So User wants Start=Flat.
-            // So we need to reverse it so Frame 60 (Flat) becomes the first frame.
-            setImages(loaded.filter(Boolean).reverse());
+            // User requested "End with logo facing straight forward".
+            // Assuming the sequence 001->060 ends in that state.
+            // Removing reverse() to play natural sequence.
+            setImages(loaded.filter(Boolean));
 
             setIsLoaded(true);
         };
@@ -77,7 +69,7 @@ const LogoCanvas = () => {
             scrollTrigger: {
                 trigger: "body", // Scroll relative to entire page
                 start: "top top",
-                end: "+=300", // Matches Header opacity logic
+                end: "+=400", // Matches Header opacity logic (increased to 400)
                 scrub: 0.5, // Smooth scrubbing
             },
             onUpdate: () => render(Math.round(scrollObj.frame))
@@ -91,7 +83,8 @@ const LogoCanvas = () => {
         <canvas
             ref={canvasRef}
             className="h-full w-auto object-contain"
-            style={{ filter: 'contrast(1.25) brightness(0.75)' }} // Crush dark gray background to black for screen blend
+        // Removed contrast filter as user provided new assets and requested mix-blend-mode: screen
+        // The mix-blend-mode is handled by the parent container in Header.jsx
         />
     );
 };

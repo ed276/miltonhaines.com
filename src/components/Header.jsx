@@ -7,8 +7,8 @@ const Header = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            // Sync with LogoCanvas: 0 to 300px (More runway for larger logo)
-            const limit = 300;
+            // Sync with LogoCanvas: 0 to 400px (More runway for larger logo)
+            const limit = 400;
             const progress = Math.min(Math.max(window.scrollY / limit, 0), 1);
             setHeaderOpacity(progress);
         };
@@ -35,7 +35,7 @@ const Header = () => {
             }>
             <div className="container mx-auto px-6 flex justify-between items-center transition-all duration-300">
                 {/* LOGO CONTAINER */}
-                <a href="#" className="group h-28 w-auto overflow-hidden rounded-sm relative block mix-blend-screen">
+                <a href="#" className="group h-40 w-auto overflow-hidden rounded-sm relative block mix-blend-screen">
                     <LogoCanvas />
                 </a>
 
