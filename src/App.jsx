@@ -8,7 +8,9 @@ import ProcessTimeline from './components/ProcessTimeline';
 import SeoAiDiscovery from './components/SeoAiDiscovery';
 import PricingEngine from './components/PricingEngine';
 import EfficiencyTable from './components/EfficiencyTable';
+import EfficiencyTable from './components/EfficiencyTable';
 import Portfolio from './components/Portfolio';
+import Contact from './components/Contact';
 import QnAModal from './components/QnAModal';
 import Footer from './components/Footer';
 
@@ -28,6 +30,7 @@ function App() {
                 <EfficiencyTable />
                 <Portfolio />
                 <PricingEngine />
+                <Contact />
             </main>
 
             <Footer onOpenQnA={() => setIsQnAOpen(true)} />
