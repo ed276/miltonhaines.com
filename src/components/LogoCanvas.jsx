@@ -17,7 +17,8 @@ const LogoCanvas = () => {
             for (let i = 1; i <= frameCount; i++) {
                 const img = new Image();
                 const filename = `ezgif-frame-${i.toString().padStart(3, '0')}.jpg`;
-                img.src = `/logo-sequence/${filename}`;
+                // Use BASE_URL to handle GitHub Pages subdirectory
+                img.src = `${import.meta.env.BASE_URL}logo-sequence/${filename}`;
                 await new Promise((resolve) => {
                     img.onload = resolve;
                     img.onerror = resolve; // Continue even if frame missing

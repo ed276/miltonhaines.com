@@ -3,21 +3,36 @@ import React, { useState, useEffect } from 'react';
 import LogoCanvas from './LogoCanvas';
 
 const Header = () => {
-    const [scrolled, setScrolled] = useState(false);
+    const [headerOpacity, setHeaderOpacity] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 20);
+            // Sync with LogoCanvas: 0 to 200px
+            const limit = 200;
+            const progress = Math.min(Math.max(window.scrollY / limit, 0), 1);
+            setHeaderOpacity(progress);
         };
+
+        // Initial check
+        handleScroll();
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Calculate dynamic styles
+    const isScrolled = headerOpacity > 0.1;
+    const bgStyle = {
+        backgroundColor: `rgba(5, 5, 5, ${headerOpacity * 0.9})`, // Fade to void/90
+        backdropFilter: `blur(${headerOpacity * 12}px)`,
+        borderBottomColor: `rgba(255, 215, 0, ${headerOpacity * 0.1})`
+    };
+
     return (
         <header
-            className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'py-4 backdrop-blur-[12px] bg-void/80 border-b border-primary-gold/10' : 'py-6 bg-transparent border-b border-transparent'
-                }`}
-        >
+            style={bgStyle}
+            className={`fixed top-0 w-full z-50 transition-all duration-100 ${isScrolled ? 'py-4' : 'py-6'} border-b border-transparent`
+            }>
             <div className="container mx-auto px-6 flex justify-between items-center">
                 {/* LOGO CONTAINER */}
                 <a href="#" className="group h-10 w-auto overflow-hidden rounded-sm relative block">
