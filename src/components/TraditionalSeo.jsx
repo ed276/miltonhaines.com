@@ -59,8 +59,8 @@ const TraditionalSeo = () => {
                             <span>SYSTEM_STATUS: OPTIMAL</span>
                         </div>
                         <h2 className="text-4xl md:text-6xl font-heading font-bold text-milton-black leading-tight">
-                            Built for <br />
-                            <span className="text-terminal-green">Performance Today.</span>
+                            Traditional SEO: <br />
+                            <span className="text-terminal-green">Built for Today's Search.</span>
                         </h2>
                     </div>
                     <p className="text-gray-600 text-lg max-w-md mt-6 md:mt-0 text-right md:text-left">

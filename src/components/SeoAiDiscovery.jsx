@@ -65,10 +65,13 @@ const SeoAiDiscovery = () => {
                             </span>
                         </div>
                         <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 leading-tight">
-                            Machine-Legible <span className="text-transparent bg-clip-text bg-gradient-to-r from-terminal-green to-emerald-600">Patterns</span>.
+                            AI Discovery: <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-terminal-green to-emerald-600 animate-gradient">
+                                Built for Tomorrow's Search.
+                            </span>
                         </h2>
                         <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                            We architect a Two-Tier Discovery Architecture. One interface for humans, another for the algorithms that drive them.
+                            Traditional SEO is about keywords. AI Discovery is about entities. We structure your data so Large Language Models (LLMs) can read, understand, and recommend you.
                         </p>
 
                         <ul className="space-y-4 font-mono text-sm text-gray-300">
