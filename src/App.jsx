@@ -5,10 +5,11 @@ import Hero from './components/Hero';
 import WhyThisWorks from './components/WhyThisWorks';
 import FeatureMosaic from './components/FeatureMosaic';
 import ProcessTimeline from './components/ProcessTimeline';
+import TraditionalSeo from './components/TraditionalSeo';
 import SeoAiDiscovery from './components/SeoAiDiscovery';
-import PricingEngine from './components/PricingEngine';
 import EfficiencyTable from './components/EfficiencyTable';
 import Portfolio from './components/Portfolio';
+import PricingEngine from './components/PricingEngine';
 import Contact from './components/Contact';
 import QnAModal from './components/QnAModal';
 import Footer from './components/Footer';
@@ -25,6 +26,7 @@ function App() {
                 <WhyThisWorks />
                 <FeatureMosaic />
                 <ProcessTimeline />
+                <TraditionalSeo />
                 <SeoAiDiscovery />
                 <EfficiencyTable />
                 <Portfolio />
