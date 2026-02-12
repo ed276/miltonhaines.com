@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import LogoCanvas from './LogoCanvas';
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -19,16 +20,8 @@ const Header = () => {
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 {/* LOGO CONTAINER */}
-                <a href="#" className="group h-10 w-auto overflow-hidden rounded-sm relative">
-                    {/* Background Layer - Transitions from Transparent to Black */}
-                    <div className={`absolute inset-0 transition-colors duration-500 ${scrolled ? 'bg-black' : 'bg-transparent'}`}></div>
-
-                    {/* Image Layer */}
-                    <img
-                        src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/7c5be5e2-b40a-46e8-06d1-7ec8e7197900/public"
-                        alt="MiltonHaines WebCraft"
-                        className="h-10 w-auto object-contain relative z-10"
-                    />
+                <a href="#" className="group h-10 w-auto overflow-hidden rounded-sm relative block">
+                    <LogoCanvas />
                 </a>
 
                 {/* DESKTOP NAV */}
