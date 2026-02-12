@@ -54,11 +54,11 @@ const TraditionalSeo = () => {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 border-b border-gray-300 pb-8">
                     <div>
-                        <div className="inline-flex items-center space-x-2 bg-milton-black text-white text-xs font-mono mb-4 px-3 py-1 rounded-full">
+                        <div className="inline-flex items-center space-x-2 bg-void text-white text-xs font-mono mb-4 px-3 py-1 rounded-full">
                             <span className="w-2 h-2 rounded-full bg-terminal-green animate-pulse"></span>
                             <span>SYSTEM_STATUS: OPTIMAL</span>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-heading font-bold text-milton-black leading-tight">
+                        <h2 className="text-4xl md:text-6xl font-heading font-bold text-void leading-tight">
                             Traditional SEO: <br />
                             <span className="text-terminal-green">Built for Today's Search.</span>
                         </h2>
@@ -77,7 +77,7 @@ const TraditionalSeo = () => {
                         >
                             <h4 className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-2">{metric.label}</h4>
                             <div className="flex items-center space-x-3">
-                                <span className={`text-3xl font-heading font-bold ${metric.status === 'good' ? 'text-terminal-green' : 'text-milton-black'}`}>
+                                <span className={`text-3xl font-heading font-bold ${metric.status === 'good' ? 'text-terminal-green' : 'text-void'}`}>
                                     {metric.value}
                                 </span>
                                 {metric.status === 'good' && (

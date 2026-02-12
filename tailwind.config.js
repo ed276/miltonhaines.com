@@ -8,6 +8,7 @@ export default {
         extend: {
             colors: {
                 'void': '#050505',
+                'milton-black': '#0a0a0a',
                 'primary-gold': '#FFD700',
                 'terminal-green': '#00FF41',
             },
