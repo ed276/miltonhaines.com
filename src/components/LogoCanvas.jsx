@@ -82,9 +82,8 @@ const LogoCanvas = () => {
     return (
         <canvas
             ref={canvasRef}
-            className="h-full w-auto object-contain"
-        // Removed contrast filter as user provided new assets and requested mix-blend-mode: screen
-        // The mix-blend-mode is handled by the parent container in Header.jsx
+            className="h-full w-auto object-contain mix-blend-screen"
+            style={{ filter: 'contrast(1.25) brightness(0.75)' }}
         />
     );
 };
