@@ -10,64 +10,28 @@ const LogoCanvas = () => {
     const [isLoaded, setIsLoaded] = useState(false);
     const frameCount = 60; // Actual frame count
 
-    // 1. Preload & Process Images (Chroma Key: Black -> Transparent)
+    // 1. Preload Images (Standard)
     useEffect(() => {
-        const loadAndProcessImages = async () => {
-            const loadPromises = [];
-
-            // Helper to process image data: Turn black pixels transparent
-            const removeBlackBackground = async (img) => {
-                const canvas = document.createElement('canvas');
-                canvas.width = img.width;
-                canvas.height = img.height;
-                const ctx = canvas.getContext('2d');
-                ctx.drawImage(img, 0, 0);
-
-                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-                const data = imageData.data;
-                const threshold = 40; // Pixel darkness threshold (0-255)
-
-                for (let i = 0; i < data.length; i += 4) {
-                    const r = data[i];
-                    const g = data[i + 1];
-                    const b = data[i + 2];
-
-                    // If pixel is dark enough, make it transparent
-                    if (r < threshold && g < threshold && b < threshold) {
-                        data[i + 3] = 0; // Alpha = 0
-                    }
-                }
-
-                return await createImageBitmap(imageData);
-            };
-
+        const loadImages = async () => {
+            const promises = [];
             for (let i = 1; i <= frameCount; i++) {
                 const filename = `ezgif-frame-${i.toString().padStart(3, '0')}.png`;
                 const src = `${import.meta.env.BASE_URL}logo-sequence/${filename}`;
 
-                loadPromises.push(new Promise(async (resolve) => {
+                promises.push(new Promise((resolve) => {
                     const img = new Image();
-                    img.crossOrigin = "Anonymous"; // optimize for canvas
                     img.src = src;
-                    img.onload = async () => {
-                        try {
-                            const processed = await removeBlackBackground(img);
-                            resolve(processed);
-                        } catch (e) {
-                            console.error("Frame processing failed", e);
-                            resolve(img); // Fallback to original
-                        }
-                    };
-                    img.onerror = () => resolve(null);
+                    img.onload = () => resolve(img);
+                    img.onerror = () => resolve(null); // Handle errors gracefully
                 }));
             }
 
-            const processedFrames = await Promise.all(loadPromises);
-            setImages(processedFrames.filter(Boolean));
+            const loaded = await Promise.all(promises);
+            setImages(loaded.filter(Boolean));
             setIsLoaded(true);
         };
 
-        loadAndProcessImages();
+        loadImages();
     }, []);
 
     // 2. Setup ScrollTrigger Animation
@@ -113,7 +77,6 @@ const LogoCanvas = () => {
         <canvas
             ref={canvasRef}
             className="h-full w-auto object-contain"
-        // Clean canvas, no CSS filters needed as transparency is baked in now
         />
     );
 };
