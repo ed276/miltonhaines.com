@@ -14,8 +14,8 @@ const Portfolio = () => {
             <div className="container mx-auto px-6">
                 <div className="mb-12 flex items-end justify-between">
                     <div>
-                        <h2 className="text-3xl font-heading font-bold text-white mb-2">Recent Deployments</h2>
-                        <p className="text-gray-500 text-sm">Active infrastructure in the wild.</p>
+                        <h2 className="text-3xl font-heading font-bold text-white mb-2">Recent Projects</h2>
+                        <p className="text-gray-500 text-sm">Professional websites built for Main Street businesses.</p>
                     </div>
                 </div>
 
@@ -26,7 +26,7 @@ const Portfolio = () => {
                                 <img
                                     src={client.image}
                                     alt={client.name}
-                                    className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500 filter grayscale group-hover:grayscale-0"
+                                    className="object-cover w-full h-full transform group-hover:scale-105 transition-transform duration-500"
                                 />
                                 <div className="absolute inset-0 bg-void/50 group-hover:bg-transparent transition-colors duration-300"></div>
                             </div>

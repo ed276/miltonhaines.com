@@ -77,7 +77,7 @@ const ProcessTimeline = () => {
             image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/c6802be5-524e-49e5-1604-01a96d62d800/public"
         },
         {
-            title: "The Result",
+            title: "The Results",
             step: "05",
             description: "A living digital asset that grows with you. No technical debt, no performance degradation, just consistent, high-performance infrastructure that serves your business goals day after day.",
             image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/9ad3859b-e39a-448c-9c59-7b199022a300/public"

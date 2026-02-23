@@ -10,7 +10,7 @@ export default {
                 'void': '#050505',
                 'milton-black': '#0a0a0a',
                 'primary-gold': '#FFD700',
-                'terminal-green': '#00FF41',
+                'terminal-green': '#94A3B8', // Repurposed from neon green to a sleek industrial slate
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],

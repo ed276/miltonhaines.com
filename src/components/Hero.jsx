@@ -38,21 +38,22 @@ const Hero = () => {
                 />
 
                 {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-void via-void/80 to-transparent"></div>
+                <div className="absolute inset-0 bg-void/60 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-void via-void/90 to-transparent"></div>
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_100%)]"></div>
             </div>
 
             <div className="container mx-auto px-6 relative z-10 text-center">
                 <div ref={textRef}>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-heading mb-8 leading-tight tracking-tight">
-                        Built Like <span className="text-white">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading mb-6 leading-tight tracking-tight">
+                        Built Like <span className="text-primary-gold drop-shadow-md">
                             Infrastructure
                         </span>.<br />
                         Priced for <span className="text-white">Main Street</span>.
                     </h1>
 
-                    <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl mb-12 leading-relaxed">
-                        Making enterprise-level design accessible to Main Street businesses through consistent, clear, scalable builds.
+                    <p className="text-gray-300 max-w-2xl mx-auto text-lg md:text-xl mb-12 leading-relaxed">
+                        Agency-grade SEO and zero-bloat code. Delivering reliable, high-performance websites without the enterprise price tag.
                     </p>
 
                     <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
