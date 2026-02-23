@@ -12,7 +12,7 @@ const PricingEngine = () => {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">Investment Protocols</h2>
-                    <p className="text-gray-400">Clear, transparent pricing. No bloated agency retainers.</p>
+                    <p className="text-gray-400">Clear, transparent pricing. No opaque retainers.</p>
                 </div>
 
                 <div className="max-w-4xl mx-auto bg-void border border-white/10 rounded-sm p-8 md:p-12 backdrop-blur-sm relative">
@@ -96,7 +96,7 @@ const PricingEngine = () => {
                     </div>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

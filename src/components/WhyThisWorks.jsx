@@ -53,20 +53,20 @@ const WhyThisWorks = () => {
 
                     {/* System Log Header */}
                     <div className="flex justify-end mb-8">
-                        <div className="flex items-center space-x-2 text-xs font-mono text-red-500/80 animate-pulse">
-                            <span className="w-2 h-2 rounded-full bg-red-500"></span>
-                            <span>// SYSTEM_LOG: ERRORS_DETECTED</span>
+                        <div className="flex items-center space-x-2 text-xs font-mono text-primary-gold/80 animate-pulse">
+                            <span className="w-2 h-2 rounded-full bg-primary-gold"></span>
+                            <span>// SYSTEM_LOG: UPGRADE_REQUIRED</span>
                         </div>
                     </div>
 
                     {/* Main Headline */}
                     <div className="text-center mb-16">
                         <h3 className="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
-                            The Industry Broke Trust.<br />
+                            The Technology Aged.<br />
                             The Market <span className="text-primary-gold">Pivoted</span>.
                         </h3>
                         <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
-                            Traditional sites were sold as assets but delivered as liabilities. As they became burdensome and stagnant, business owners redirected their focus to Social Media. <span className="text-white font-bold">Both were traps.</span>
+                            Early websites were built with the best platforms available at the time, but they quickly became burdensome to maintain. Business owners naturally redirected their focus to Social Media. <span className="text-white font-bold">Both created new problems.</span>
                         </p>
                     </div>
 
@@ -79,10 +79,10 @@ const WhyThisWorks = () => {
                                 // VECTOR_01: FINANCIAL
                             </div>
                             <h4 className="text-xl font-bold font-heading text-white mb-3 group-hover:text-primary-gold transition-colors">
-                                Financial Loss
+                                Depreciating Code
                             </h4>
                             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                                Billions in capital evaporated into sites that sit dormant. They cost thousands to build but lose value daily due to "Code Rot."
+                                Legacy sites cost thousands to build but require constant, expensive plugin updates just to stay online. Without active maintenance, they suffer from "Code Rot."
                             </p>
                             <div className="text-[10px] font-mono text-gray-500 pt-4 border-t border-white/5">
                                 GLOBAL_STATUS: <span className="text-white">82% INACTIVE</span>
@@ -135,7 +135,7 @@ const WhyThisWorks = () => {
                 </div>
 
             </div>
-        </section>
+        </section >
     );
 };
 
