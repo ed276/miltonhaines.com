@@ -62,11 +62,11 @@ const WhyThisWorks = () => {
                     {/* Main Headline */}
                     <div className="text-center mb-16">
                         <h3 className="text-3xl md:text-5xl font-heading font-bold mb-6 leading-tight">
-                            The Technology Aged.<br />
+                            Technology Aged.<br />
                             The Market <span className="text-primary-gold">Pivoted</span>.
                         </h3>
                         <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
-                            Traditional sites were sold as assets but delivered as liabilities. As they became burdensome and stagnant, business owners redirected their focus to Social Media. <span className="text-white font-bold">Both were traps.</span>
+                            Traditional sites were sold as assets but delivered as liabilities. Rather than spend thousands to overhaul broken, outdated pages, business owners redirected their focus to Social Media. <span className="text-white font-bold">Both were traps.</span>
                         </p>
                     </div>
 
