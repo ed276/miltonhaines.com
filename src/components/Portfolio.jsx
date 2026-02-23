@@ -30,6 +30,9 @@ const Portfolio = () => {
             name: "Danubia Cleaning LLC",
             category: "RECURRING SERVICE",
             image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/a51ecdc5-dc37-480e-5e4e-41e33fc04600/public",
+            v2Image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/a51ecdc5-dc37-480e-5e4e-41e33fc04600/public", // PLACEHOLDER
+            status: "V2_LIVE",
+            v2CompletedDate: "February 2026",
             quoteSnippet: '"The team at MiltonHaines has been a pleasure to work with."',
             fullQuote: '"The team at MiltonHaines has been a pleasure to work with. The website has yielded great results. We book 1 to 2 jobs a week, and it has become one of my best marketing tools. Not having to make a big upfront investment made it an easy choice for us. Alex went above and beyond for me - even helping me deal with Google business listing when they were giving me problems. They are a great company to work with, and we love having the website."',
             annualCost: "$239.88",
@@ -43,6 +46,9 @@ const Portfolio = () => {
             name: "Noriko's Nook",
             category: "NICHE EDUCATION",
             image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/92fe5398-8942-4fd8-c3a7-5038dcc96400/public",
+            v2Image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/92fe5398-8942-4fd8-c3a7-5038dcc96400/public", // PLACEHOLDER
+            status: "V2_LIVE",
+            v2CompletedDate: "February 2026",
             quoteSnippet: '"I\'ve been working with MH for almost two years now, and it has been a happy experience."',
             fullQuote: '"I\'ve been working with MH for almost two years now, and it has been a happy experience. I have signed 10 new students, who meet me weekly to learn Japanese. I enjoy my website and am very excited to see my new one next year."',
             annualCost: "$239.88",
@@ -86,13 +92,41 @@ const Portfolio = () => {
                         return (
                             <div key={client.id} className="bg-milton-black/50 border border-white/10 rounded-sm overflow-hidden flex flex-col transition-all duration-300 hover:border-white/20">
                                 {/* Image Container */}
-                                <div className="h-64 sm:h-72 w-full relative overflow-hidden bg-void">
-                                    <img
-                                        src={client.image}
-                                        alt={client.name}
-                                        className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
-                                    />
-                                </div>
+                                {client.status === "V2_LIVE" ? (
+                                    <div className="h-64 sm:h-72 w-full relative overflow-hidden bg-void flex">
+                                        {/* V1 Side */}
+                                        <div className="w-1/2 relative group border-r border-white/10">
+                                            <img
+                                                src={client.image}
+                                                alt={`${client.name} V1 Legacy`}
+                                                className="object-cover w-full h-full opacity-50 grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
+                                            />
+                                            <div className="absolute top-4 left-4 bg-milton-black/80 px-2 py-1 text-[10px] font-mono text-gray-400 uppercase tracking-widest backdrop-blur-sm border border-white/10">
+                                                V1_LEGACY
+                                            </div>
+                                        </div>
+                                        {/* V2 Side */}
+                                        <div className="w-1/2 relative group">
+                                            <img
+                                                src={client.v2Image}
+                                                alt={`${client.name} V2 Upgrade`}
+                                                className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                            />
+                                            <div className="absolute top-4 right-4 bg-primary-gold/20 px-2 py-1 text-[10px] font-mono text-primary-gold uppercase tracking-widest backdrop-blur-sm border border-primary-gold/50 flex items-center shadow-[0_0_10px_rgba(255,215,0,0.2)]">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-primary-gold mr-2 animate-pulse"></span>
+                                                V2_DEPLOYED
+                                            </div>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div className="h-64 sm:h-72 w-full relative overflow-hidden bg-void">
+                                        <img
+                                            src={client.image}
+                                            alt={client.name}
+                                            className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
+                                        />
+                                    </div>
+                                )}
 
                                 {/* Content Container */}
                                 <div className="p-8 flex flex-col flex-grow">
@@ -159,10 +193,21 @@ const Portfolio = () => {
                                 </div>
 
                                 {/* Footer Note */}
-                                <div className="bg-void/80 border-t border-white/10 p-4 px-8 mt-auto flex items-center">
-                                    <span className="w-2 h-2 rounded-full bg-primary-gold mr-3"></span>
-                                    <span className="text-gray-500 text-xs">Full Rebuild Scheduled: <span className="text-white font-bold">{client.scheduledRebuild}</span></span>
-                                </div>
+                                {client.status === "V2_LIVE" ? (
+                                    <div className="bg-primary-gold/5 border-t border-primary-gold/20 p-4 px-8 mt-auto flex items-center transition-colors">
+                                        <span className="w-2 h-2 rounded-full bg-primary-gold mr-3 shadow-[0_0_8px_rgba(255,215,0,0.8)]"></span>
+                                        <span className="text-gray-400 text-xs text-left">
+                                            V2 Infrastructure Deployed: <span className="text-primary-gold font-bold">{client.v2CompletedDate}</span>
+                                        </span>
+                                    </div>
+                                ) : (
+                                    <div className="bg-void/80 border-t border-white/10 p-4 px-8 mt-auto flex items-center">
+                                        <span className="w-2 h-2 rounded-full bg-primary-gold mr-3"></span>
+                                        <span className="text-gray-500 text-xs text-left">
+                                            Full Rebuild Scheduled: <span className="text-white font-bold">{client.scheduledRebuild}</span>
+                                        </span>
+                                    </div>
+                                )}
                             </div>
                         );
                     })}
