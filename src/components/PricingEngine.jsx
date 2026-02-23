@@ -72,7 +72,7 @@ const PricingEngine = () => {
                             <h3 className="text-gray-400 text-sm uppercase tracking-widest mb-2">Monthly Maintenance</h3>
                             <div className="flex items-center justify-center space-x-1 mb-2 h-16">
                                 <span className="text-4xl font-heading font-bold text-white transition-all duration-300">
-                                    {isMember ? '$19.99' : '$79.99'}
+                                    {isMember ? '$24.99' : '$79.99'}
                                 </span>
                                 <span className="text-sm text-gray-500 self-end mb-2">/mo</span>
                             </div>

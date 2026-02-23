@@ -18,11 +18,11 @@ const Portfolio = () => {
             category: "CONSTRUCTION & TRADES",
             image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/7e119676-cb9f-42d9-b6c3-5be8fec4ca00/public",
             quoteSnippet: '"I operated for 25 years without a website."',
-            fullQuote: '"I operated for 25 years without a website. We\'ve always made it a point to deliver for our clients, and as a result, have always received enough referral business to avoid outside marketing costs. After speaking with MiltonHaines, and hearing their offer to build our website for free, and only pay a low fee to maintain and manage it, I thought it couldn\'t hurt anything to give it a try. We don\'t pay for ads, and we still get a few leads a month from the site, and have booked three new jobs over the past year. For 240 bucks a year, it\'s a no-brainer. We couldn\'t be happier with the results."',
-            annualCost: "$239.88",
-            monthlyCost: "$19.99/mo",
+            fullQuote: '"I operated for 25 years without a website. We\'ve always made it a point to deliver for our clients, and as a result, have always received enough referral business to avoid outside marketing costs. After speaking with MiltonHaines, and hearing their offer to build our website for free, and only pay a low fee to maintain and manage it, I thought it couldn\'t hurt anything to give it a try. We don\'t pay for ads, and we still get a few leads a month from the site, and have booked three new jobs over the past year. For 300 bucks a year, it\'s a no-brainer. We couldn\'t be happier with the results."',
+            annualCost: "$299.88",
+            monthlyCost: "$24.99/mo",
             revenue: "$9,500",
-            roi: "3,864%",
+            roi: "3,068%",
             scheduledRebuild: "January 2026"
         },
         {
@@ -35,10 +35,10 @@ const Portfolio = () => {
             v2CompletedDate: "February 2026",
             quoteSnippet: '"The team at MiltonHaines has been a pleasure to work with."',
             fullQuote: '"The team at MiltonHaines has been a pleasure to work with. The website has yielded great results. We book 1 to 2 jobs a week, and it has become one of my best marketing tools. Not having to make a big upfront investment made it an easy choice for us. Alex went above and beyond for me - even helping me deal with Google business listing when they were giving me problems. They are a great company to work with, and we love having the website."',
-            annualCost: "$239.88",
-            monthlyCost: "$19.99/mo",
+            annualCost: "$299.88",
+            monthlyCost: "$24.99/mo",
             revenue: "$11,760",
-            roi: "4,804%",
+            roi: "3,822%",
             scheduledRebuild: "March 2026"
         },
         {
@@ -51,10 +51,10 @@ const Portfolio = () => {
             v2CompletedDate: "February 2026",
             quoteSnippet: '"I\'ve been working with MH for almost two years now, and it has been a happy experience."',
             fullQuote: '"I\'ve been working with MH for almost two years now, and it has been a happy experience. I have signed 10 new students, who meet me weekly to learn Japanese. I enjoy my website and am very excited to see my new one next year."',
-            annualCost: "$239.88",
-            monthlyCost: "$19.99/mo",
+            annualCost: "$299.88",
+            monthlyCost: "$24.99/mo",
             revenue: "$33,800",
-            roi: "13,992%",
+            roi: "11,171%",
             scheduledRebuild: "May 2026"
         },
         {
@@ -64,11 +64,11 @@ const Portfolio = () => {
             image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/2ae2f759-535f-46ae-d94f-11e292761200/public",
             quoteSnippet: '"I can\'t say enough good things about my relationship with MiltonHaines."',
             fullQuote: '"I can\'t say enough good things about my relationship with MiltonHaines. They took a back seat, and let me have the website created exactly as I wanted it. I had to close my business for a few months due to a family emergency, and they immediately offered to pause my payments while I was closed. Who does that? I love my website, and have booked over 50 clients in the last year. It has been a blessing, and has been so helpful to my business."',
-            annualCost: "$239.88",
-            monthlyCost: "$19.99/mo",
+            annualCost: "$299.88",
+            monthlyCost: "$24.99/mo",
             revenue: "$9,880",
             revenueContext: "(52 clients)",
-            roi: "4,019%",
+            roi: "3,195%",
             scheduledRebuild: "June 2026"
         }
     ];
