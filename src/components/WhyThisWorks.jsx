@@ -66,7 +66,7 @@ const WhyThisWorks = () => {
                             The Market <span className="text-primary-gold">Pivoted</span>.
                         </h3>
                         <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed">
-                            Early websites were built with the best platforms available at the time, but they quickly became burdensome to maintain. Business owners naturally redirected their focus to Social Media. <span className="text-white font-bold">Both created new problems.</span>
+                            Traditional sites were sold as assets but delivered as liabilities. As they became burdensome and stagnant, business owners redirected their focus to Social Media. <span className="text-white font-bold">Both were traps.</span>
                         </p>
                     </div>
 
@@ -79,10 +79,10 @@ const WhyThisWorks = () => {
                                 // VECTOR_01: FINANCIAL
                             </div>
                             <h4 className="text-xl font-bold font-heading text-white mb-3 group-hover:text-primary-gold transition-colors">
-                                Depreciating Code
+                                Financial Loss
                             </h4>
                             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                                Legacy sites cost thousands to build but require constant, expensive plugin updates just to stay online. Without active maintenance, they suffer from "Code Rot."
+                                Billions in capital evaporated into sites that sit dormant. They cost thousands to build but lose value daily due to "Code Rot."
                             </p>
                             <div className="text-[10px] font-mono text-gray-500 pt-4 border-t border-white/5">
                                 GLOBAL_STATUS: <span className="text-white">82% INACTIVE</span>
