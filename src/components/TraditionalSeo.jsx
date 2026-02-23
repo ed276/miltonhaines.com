@@ -105,7 +105,7 @@ const TraditionalSeo = () => {
                         <div className="mb-8 md:mb-0">
                             <h3 className="text-2xl font-heading font-bold mb-2">Agency-Grade Technical SEO</h3>
                             <p className="text-gray-400 text-sm max-w-sm">
-                                Creating the foundation that $5,000/mo agencies charge to "audit". We bake it in.
+                                Creating the technical foundation that traditional agencies charge thousands to "audit". We bake it in from day one.
                             </p>
                         </div>
                         <div className="w-full md:w-1/2">
