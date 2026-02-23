@@ -18,7 +18,7 @@ const Portfolio = () => {
             category: "CONSTRUCTION & TRADES",
             image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/7e119676-cb9f-42d9-b6c3-5be8fec4ca00/public",
             quoteSnippet: '"I operated for 25 years without a website."',
-            fullQuote: '"I operated for 25 years without a website. We\'ve always made it a point to deliver for our clients, and as a result, have always received enough referral business to avoid outside marketing costs. After speaking with MiltonHaines, and hearing their offer to build our website for free, and only pay a low fee to maintain and manage it, I thought it couldn\'t hurt anything to give it a try. We don\'t pay for ads, and we still get a few leads a month from the site, and have booked three new jobs over the past year. For 300 bucks a year, it\'s a no-brainer. We couldn\'t be happier with the results."',
+            fullQuote: '"I operated for 25 years without a website. We\'ve always made it a point to deliver for our clients, and as a result, have always received enough referral business to avoid outside marketing costs. After speaking with MiltonHaines, and hearing their offer to build our website for free, and only pay a low fee to maintain and manage it, I thought it couldn\'t hurt anything to give it a try. We don\'t pay for ads, and we still get a few leads a month from the site, and have booked four new jobs over the past year. For 300 bucks a year, it\'s a no-brainer. We couldn\'t be happier with the results."',
             annualCost: "$299.88",
             monthlyCost: "$24.99/mo",
             revenue: "$9,500",
