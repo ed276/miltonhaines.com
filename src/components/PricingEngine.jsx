@@ -11,33 +11,42 @@ const PricingEngine = () => {
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">Efficiency Mandate</h2>
-                    <p className="text-gray-400">Clear, transparent pricing protocols.</p>
+                    <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">Investment Protocols</h2>
+                    <p className="text-gray-400">Clear, transparent pricing. No bloated agency retainers.</p>
                 </div>
 
                 <div className="max-w-4xl mx-auto bg-void border border-white/10 rounded-sm p-8 md:p-12 backdrop-blur-sm relative">
                     {/* Toggle Switch */}
-                    <div className="flex flex-col md:flex-row justify-center items-center mb-12 space-y-4 md:space-y-0 md:space-x-4">
-                        <span className={`text-sm font-medium tracking-wide ${!isMember ? 'text-white' : 'text-gray-500'}`}>Standard Protocol</span>
+                    <div className="relative flex flex-col items-center mb-12 mt-4">
+                        {/* Tooltip to draw attention */}
+                        {!isMember && (
+                            <div className="absolute -top-10 md:-top-12 animate-bounce bg-primary-gold/10 border border-primary-gold text-primary-gold text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-sm shadow-[0_0_15px_rgba(255,215,0,0.2)] z-10 cursor-pointer" onClick={() => setIsMember(true)}>
+                                Chamber or Association Member?
+                            </div>
+                        )}
 
-                        <button
-                            onClick={() => setIsMember(!isMember)}
-                            className={`
-                                relative w-16 h-8 rounded-full border transition-colors duration-300 focus:outline-none
-                                ${isMember ? 'bg-primary-gold/10 border-primary-gold' : 'bg-white/5 border-white/20'}
-                            `}
-                        >
-                            <span
+                        <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+                            <span className={`text-sm font-medium tracking-wide transition-colors ${!isMember ? 'text-white drop-shadow-md' : 'text-gray-600'}`}>Standard Protocol</span>
+
+                            <button
+                                onClick={() => setIsMember(!isMember)}
                                 className={`
-                                    absolute top-1 left-1 w-5 h-5 rounded-full transition-transform duration-300
-                                    ${isMember ? 'translate-x-8 bg-primary-gold shadow-[0_0_10px_rgba(255,215,0,0.5)]' : 'translate-x-0 bg-gray-400'}
+                                    relative w-16 h-8 rounded-full border transition-all duration-300 focus:outline-none
+                                    ${isMember ? 'bg-primary-gold/20 border-primary-gold shadow-[0_0_15px_rgba(255,215,0,0.3)]' : 'bg-white/5 border-white/20 hover:border-primary-gold/50'}
                                 `}
-                            ></span>
-                        </button>
+                            >
+                                <span
+                                    className={`
+                                        absolute top-1 left-1 w-5 h-5 rounded-full transition-all duration-300
+                                        ${isMember ? 'translate-x-8 bg-primary-gold shadow-[0_0_10px_rgba(255,215,0,0.8)]' : 'translate-x-0 bg-gray-400'}
+                                    `}
+                                ></span>
+                            </button>
 
-                        <span className={`text-sm font-medium tracking-wide ${isMember ? 'text-primary-gold' : 'text-gray-500'}`}>
-                            Association / Chamber Member
-                        </span>
+                            <span className={`text-sm font-medium tracking-wide transition-colors ${isMember ? 'text-primary-gold drop-shadow-[0_0_8px_rgba(255,215,0,0.5)]' : 'text-gray-600'}`}>
+                                Local Alliance Member
+                            </span>
+                        </div>
                     </div>
 
                     {/* Pricing Grid */}
