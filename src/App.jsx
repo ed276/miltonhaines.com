@@ -27,9 +27,9 @@ function App() {
                 <EfficiencyTable />
                 <FeatureMosaic />
                 <ProcessTimeline />
+                <Portfolio />
                 <TraditionalSeo />
                 <SeoAiDiscovery />
-                <Portfolio />
                 <PricingEngine />
                 <Contact />
             </main>
