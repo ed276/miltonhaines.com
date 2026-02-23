@@ -24,11 +24,11 @@ function App() {
             <main>
                 <Hero />
                 <WhyThisWorks />
+                <EfficiencyTable />
                 <FeatureMosaic />
                 <ProcessTimeline />
                 <TraditionalSeo />
                 <SeoAiDiscovery />
-                <EfficiencyTable />
                 <Portfolio />
                 <PricingEngine />
                 <Contact />
