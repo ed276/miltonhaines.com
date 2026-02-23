@@ -1,6 +1,4 @@
-
 import React, { useState, useEffect } from 'react';
-import LogoCanvas from './LogoCanvas';
 
 const Header = () => {
     const [headerOpacity, setHeaderOpacity] = useState(0);
@@ -35,8 +33,12 @@ const Header = () => {
             }>
             <div className="container mx-auto px-6 flex justify-between items-center transition-all duration-300">
                 {/* LOGO CONTAINER */}
-                <a href="#" className="group h-12 md:h-16 w-auto overflow-hidden rounded-sm relative flex items-center">
-                    <LogoCanvas />
+                <a href="#" className="flex items-center group h-12 md:h-16 w-auto relative">
+                    <img
+                        src="https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/7c5be5e2-b40a-46e8-06d1-7ec8e7197900/public"
+                        alt="MiltonHaines WebCraft"
+                        className="h-full w-auto object-contain transition-transform duration-300 group-hover:opacity-80"
+                    />
                 </a>
 
                 {/* DESKTOP NAV */}
