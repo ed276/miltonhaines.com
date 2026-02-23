@@ -110,8 +110,8 @@ const TraditionalSeo = () => {
                         </div>
                         <div className="w-full md:w-1/2">
                             <div className="flex justify-between text-xs font-mono text-gray-500 mb-2">
-                                <span>SPEED_INDEX</span>
-                                <span className="text-terminal-green">0.4s (ELITE)</span>
+                                <span>CORE_WEB_VITALS // SPEED</span>
+                                <span className="text-terminal-green">SUB-SECOND (ELITE)</span>
                             </div>
                             <div className="w-full h-4 bg-void rounded-full overflow-hidden border border-white/10">
                                 <div ref={meterRef} className="h-full bg-gradient-to-r from-primary-gold to-terminal-green w-[95%]"></div>
