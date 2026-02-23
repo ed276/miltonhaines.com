@@ -8,6 +8,7 @@ const Contact = () => {
     const containerRef = useRef(null);
     const cardRef = useRef(null);
     const [formState, setFormState] = useState('idle'); // idle, sending, success
+    const [isChamberMember, setIsChamberMember] = useState(false);
 
     useEffect(() => {
         const container = containerRef.current;
@@ -177,6 +178,42 @@ const Contact = () => {
                                         <option>Maintenance Request</option>
                                         <option>General Inquiry</option>
                                     </select>
+                                </div>
+
+                                {/* Chamber Member Checkbox */}
+                                <div className="space-y-4 border border-white/10 rounded p-4 bg-void/30">
+                                    <label className="flex items-center space-x-3 cursor-pointer group">
+                                        <div className="relative flex items-center justify-center w-5 h-5 border border-white/30 rounded bg-transparent group-hover:border-primary-gold transition-colors">
+                                            <input
+                                                type="checkbox"
+                                                className="absolute inset-0 opacity-0 cursor-pointer"
+                                                checked={isChamberMember}
+                                                onChange={(e) => setIsChamberMember(e.target.checked)}
+                                            />
+                                            {isChamberMember && (
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 text-primary-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                                </svg>
+                                            )}
+                                        </div>
+                                        <span className="text-sm font-mono text-gray-300 group-hover:text-white transition-colors uppercase tracking-wider">
+                                            Local Alliance / Chamber Member
+                                        </span>
+                                    </label>
+
+                                    {isChamberMember && (
+                                        <div className="pt-2">
+                                            <label className="block text-xs font-mono text-primary-gold/70 uppercase tracking-widest mb-2">
+                                                Verification // Alliance Name
+                                            </label>
+                                            <input
+                                                type="text"
+                                                name="chamber_name"
+                                                className="w-full bg-void/50 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-primary-gold transition-colors font-mono placeholder-white/20"
+                                                placeholder="ENTER_CHAMBER_OR_ASSOCIATION"
+                                            />
+                                        </div>
+                                    )}
                                 </div>
 
                                 <div className="space-y-2">
