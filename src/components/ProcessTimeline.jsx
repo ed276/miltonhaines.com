@@ -110,8 +110,6 @@ const ProcessTimeline = () => {
                                     <div className="relative group perspective-1000">
                                         <div className={`absolute -inset-2 bg-gradient-to-r ${index % 2 === 0 ? 'from-primary-gold/20 to-transparent' : 'from-transparent to-primary-gold/20'} rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
                                         <div className="relative rounded-lg overflow-hidden border border-white/10 shadow-2xl transform transition-transform duration-500 group-hover:rotate-y-2 group-hover:scale-105">
-                                            <div className="absolute inset-0 bg-void/10 z-10"></div>
-                                            <div className="absolute bottom-0 left-0 right-0 h-[20%] bg-gradient-to-t from-void to-transparent z-20"></div>
                                             <img
                                                 src={item.image}
                                                 alt={item.title}
