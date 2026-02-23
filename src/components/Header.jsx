@@ -43,23 +43,33 @@ const Header = () => {
 
                 {/* DESKTOP NAV */}
                 <nav className="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
-                    {['What\'s Included', 'Process', 'SEO + AI', 'Pricing', 'ROI'].map((item) => (
-                        <a
-                            key={item}
-                            href={`#${item.toLowerCase().replace(/ /g, '-').replace(/[^a-z-]/g, '')}`}
-                            className="text-gray-300 hover:text-primary-gold transition-colors relative group"
-                        >
-                            {item}
-                            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary-gold transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                    ))}
+                    <a href="#whats-included" className="text-gray-300 hover:text-primary-gold transition-colors relative group">
+                        Architecture
+                        <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#process" className="text-gray-300 hover:text-primary-gold transition-colors relative group">
+                        Process
+                        <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#portfolio" className="text-gray-300 hover:text-primary-gold transition-colors relative group">
+                        Data / ROI
+                        <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#seo-ai" className="text-gray-300 hover:text-primary-gold transition-colors relative group">
+                        The Engine
+                        <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#pricing" className="text-gray-300 hover:text-primary-gold transition-colors relative group">
+                        Protocols
+                        <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-primary-gold transition-all duration-300 group-hover:w-full"></span>
+                    </a>
                 </nav>
 
                 {/* CTA */}
-                <button className="hidden md:block relative overflow-hidden group border border-primary-gold px-6 py-2 rounded-sm transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,215,0,0.3)]">
+                <a href="#contact" className="hidden md:block relative overflow-hidden group border border-primary-gold px-6 py-2 rounded-sm transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,215,0,0.3)]">
                     <div className="absolute inset-0 w-full h-full bg-primary-gold/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                    <span className="relative font-heading font-semibold text-primary-gold text-xs tracking-wider uppercase">Start Your Build</span>
-                </button>
+                    <span className="relative font-heading font-semibold text-primary-gold text-xs tracking-wider uppercase">Initialize Project</span>
+                </a>
 
                 {/* MOBILE MENU BUTTON (Placeholder) */}
                 <button className="md:hidden text-primary-gold">

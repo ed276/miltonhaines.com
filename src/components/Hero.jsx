@@ -57,12 +57,12 @@ const Hero = () => {
                     </p>
 
                     <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
-                        <button className="w-full md:w-auto bg-primary-gold text-void font-heading font-bold px-8 py-4 rounded-sm hover:bg-white transition-colors shadow-[0_0_20px_rgba(255,215,0,0.3)]">
-                            Start Your Build
-                        </button>
-                        <button className="w-full md:w-auto border border-white/20 text-white font-heading font-medium px-8 py-4 rounded-sm hover:bg-white/5 transition-colors backdrop-blur-sm">
+                        <a href="#contact" className="w-full md:w-auto bg-primary-gold text-void font-heading font-bold px-8 py-4 rounded-sm hover:bg-white transition-colors shadow-[0_0_20px_rgba(255,215,0,0.3)] inline-block">
+                            Initialize Project
+                        </a>
+                        <a href="#process" className="w-full md:w-auto border border-white/20 text-white font-heading font-medium px-8 py-4 rounded-sm hover:bg-white/5 transition-colors backdrop-blur-sm inline-block">
                             View Process
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

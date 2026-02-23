@@ -24,12 +24,12 @@ const Footer = ({ onOpenQnA }) => {
                     </div>
 
                     <div>
-                        <h4 className="text-white font-bold mb-6 font-heading">Navigation</h4>
+                        <h4 className="text-white font-bold mb-6 font-heading">Architecture</h4>
                         <ul className="space-y-4 text-sm text-gray-500">
-                            <li><a href="#" className="hover:text-primary-gold transition-colors">What's Included</a></li>
-                            <li><a href="#" className="hover:text-primary-gold transition-colors">Our Process</a></li>
-                            <li><a href="#" className="hover:text-primary-gold transition-colors">Pricing Protocol</a></li>
-                            <li><a href="#" className="hover:text-primary-gold transition-colors">System ROI</a></li>
+                            <li><a href="#whats-included" className="hover:text-primary-gold transition-colors">Technical Features</a></li>
+                            <li><a href="#process" className="hover:text-primary-gold transition-colors">Deployment Process</a></li>
+                            <li><a href="#pricing" className="hover:text-primary-gold transition-colors">Investment Protocols</a></li>
+                            <li><a href="#portfolio" className="hover:text-primary-gold transition-colors">Audited ROI</a></li>
                         </ul>
                     </div>
 
