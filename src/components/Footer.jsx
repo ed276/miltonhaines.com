@@ -65,7 +65,12 @@ const Footer = ({ onOpenQnA }) => {
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
                     <p>&copy; {new Date().getFullYear()} MiltonHaines WebCraft. All rights reserved.</p>
-                    <p className="font-mono">EST. 2024 // V.2.1.0</p>
+                    <div className="flex flex-col items-center md:items-end gap-2 mt-4 md:mt-0">
+                        <p className="font-mono">EST. 2024 // V.2.1.0</p>
+                        <a href="#" className="hover:text-white transition-colors duration-500 opacity-80 hover:opacity-100 mt-2" style={{ fontFamily: "'Great Vibes', cursive", fontSize: '1.25rem', fontWeight: 400, lineHeight: 1 }}>
+                            MiltonHaines
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>
