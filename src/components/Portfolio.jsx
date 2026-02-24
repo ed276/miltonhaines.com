@@ -19,6 +19,7 @@ const Portfolio = () => {
             image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/f9bd7a5b-2f17-449b-0378-4417c72baa00/public",
             v2Image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/f9bd7a5b-2f17-449b-0378-4417c72baa00/public",
             status: "V2_LIVE",
+            legacyDate: "Feb 2024 - Jan 2026",
             v2CompletedDate: "February 2026",
             link: "https://www.danubiallc.com",
             quoteSnippet: '"The team at MiltonHaines has been a pleasure to work with."',
@@ -35,6 +36,7 @@ const Portfolio = () => {
             image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/671d9a89-48fc-43ee-5a16-269f9aadd400/public",
             v2Image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/671d9a89-48fc-43ee-5a16-269f9aadd400/public",
             status: "V2_LIVE",
+            legacyDate: "Jan 2024 - Jan 2026",
             v2CompletedDate: "February 2026",
             link: "https://www.norikosnook.com",
             quoteSnippet: '"I\'ve been working with MH for almost two years now, and it has been a happy experience."',
@@ -49,9 +51,8 @@ const Portfolio = () => {
             name: "I Believe / Hard Knox",
             category: "COMBAT SPORTS ACADEMY",
             image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/5e94d87a-4f4a-4139-291a-a274ff1df000/public",
-            v2Image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/5e94d87a-4f4a-4139-291a-a274ff1df000/public",
-            status: "V2_LIVE",
-            v2CompletedDate: "February 2026",
+            status: "NEW_SITE",
+            deployDate: "February 2026",
             link: "https://www.ibhkboxing.com",
             isPortfolioOnly: true,
             quoteSnippet: '"Transforming athletes through discipline and world-class training."',
@@ -64,6 +65,7 @@ const Portfolio = () => {
             image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/599bbb76-7d4d-44ad-e2cd-d559c4aa3700/public",
             v2Image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/599bbb76-7d4d-44ad-e2cd-d559c4aa3700/public",
             status: "V2_LIVE",
+            legacyDate: "Dec 2023 - Dec 2025",
             v2CompletedDate: "February 2026",
             link: "https://www.iballroomdancer.com",
             isPortfolioOnly: true,
@@ -100,8 +102,15 @@ const Portfolio = () => {
                                                 alt={`${client.name} V1 Legacy`}
                                                 className="object-cover w-full h-full opacity-50 grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100"
                                             />
-                                            <div className="absolute top-4 left-4 bg-milton-black/80 px-2 py-1 text-[10px] font-mono text-gray-400 uppercase tracking-widest backdrop-blur-sm border border-white/10">
-                                                V1_LEGACY
+                                            <div className="absolute top-4 left-4 flex flex-col gap-1">
+                                                <div className="bg-milton-black/80 px-2 py-1 text-[10px] font-mono text-gray-400 uppercase tracking-widest backdrop-blur-sm border border-white/10 w-max shadow-md">
+                                                    V1_LEGACY
+                                                </div>
+                                                {client.legacyDate && (
+                                                    <div className="bg-milton-black/80 px-2 py-1 text-[9px] font-mono text-gray-500 tracking-wider backdrop-blur-sm border border-white/10 w-max shadow-md">
+                                                        {client.legacyDate}
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
                                         {/* V2 Side */}
@@ -111,19 +120,25 @@ const Portfolio = () => {
                                                 alt={`${client.name} V2 Upgrade`}
                                                 className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
                                             />
-                                            <div className="absolute top-4 right-4 bg-primary-gold/20 px-2 py-1 text-[10px] font-mono text-primary-gold uppercase tracking-widest backdrop-blur-sm border border-primary-gold/50 flex items-center shadow-[0_0_10px_rgba(255,215,0,0.2)]">
-                                                <span className="w-1.5 h-1.5 rounded-full bg-primary-gold mr-2 animate-pulse"></span>
+                                            <div className="absolute top-4 right-4 bg-primary-gold px-3 py-1.5 text-[10px] font-mono text-milton-black font-bold uppercase tracking-widest backdrop-blur-sm border border-primary-gold flex items-center shadow-lg shadow-primary-gold/30">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-milton-black mr-2 animate-pulse"></span>
                                                 V2_DEPLOYED
                                             </div>
                                         </div>
                                     </div>
                                 ) : (
-                                    <div className="h-64 sm:h-72 w-full relative overflow-hidden bg-void">
+                                    <div className="h-64 sm:h-72 w-full relative overflow-hidden bg-void group">
                                         <img
                                             src={client.image}
                                             alt={client.name}
-                                            className="object-cover w-full h-full transition-transform duration-700 hover:scale-105"
+                                            className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
                                         />
+                                        {client.status === "NEW_SITE" && (
+                                            <div className="absolute top-4 right-4 bg-primary-gold px-3 py-1.5 text-[10px] font-mono text-milton-black font-bold uppercase tracking-widest backdrop-blur-sm border border-primary-gold flex items-center shadow-lg shadow-primary-gold/30">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-milton-black mr-2 animate-pulse"></span>
+                                                NEW_DEPLOYMENT
+                                            </div>
+                                        )}
                                     </div>
                                 )}
 
@@ -207,6 +222,13 @@ const Portfolio = () => {
                                         <span className="w-2 h-2 rounded-full bg-primary-gold mr-3 shadow-[0_0_8px_rgba(255,215,0,0.8)]"></span>
                                         <span className="text-gray-400 text-xs text-left">
                                             V2 Infrastructure Deployed: <span className="text-primary-gold font-bold">{client.v2CompletedDate}</span>
+                                        </span>
+                                    </div>
+                                ) : client.status === "NEW_SITE" ? (
+                                    <div className="bg-primary-gold/5 border-t border-primary-gold/20 p-4 px-8 mt-auto flex items-center transition-colors">
+                                        <span className="w-2 h-2 rounded-full bg-primary-gold mr-3 shadow-[0_0_8px_rgba(255,215,0,0.8)]"></span>
+                                        <span className="text-gray-400 text-xs text-left">
+                                            Infrastructure Deployed: <span className="text-primary-gold font-bold">{client.deployDate}</span>
                                         </span>
                                     </div>
                                 ) : (
