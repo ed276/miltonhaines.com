@@ -44,7 +44,7 @@ const PricingEngine = () => {
                             </button>
 
                             <span className={`text-sm font-medium tracking-wide transition-colors ${isMember ? 'text-primary-gold drop-shadow-[0_0_8px_rgba(255,215,0,0.5)]' : 'text-gray-600'}`}>
-                                Local Alliance Member
+                                Local Chamber Member
                             </span>
                         </div>
                     </div>
