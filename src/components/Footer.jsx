@@ -67,7 +67,7 @@ const Footer = ({ onOpenQnA }) => {
                     <p>&copy; {new Date().getFullYear()} MiltonHaines WebCraft. All rights reserved.</p>
                     <div className="flex flex-col items-center md:items-end gap-2 mt-4 md:mt-0">
                         <p className="font-mono">EST. 2024 // V.2.1.0</p>
-                        <a href="#" className="hover:text-white transition-colors duration-500 opacity-80 hover:opacity-100 mt-2" style={{ fontFamily: "'Great Vibes', cursive", fontSize: '1.25rem', fontWeight: 400, lineHeight: 1 }}>
+                        <a href="https://www.miltonhaines.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-500 opacity-80 hover:opacity-100 mt-2" style={{ fontFamily: "'Great Vibes', cursive", fontSize: '1.25rem', fontWeight: 400, lineHeight: 1 }}>
                             MiltonHaines
                         </a>
                     </div>
