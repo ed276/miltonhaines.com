@@ -13,63 +13,62 @@ const Portfolio = () => {
 
     const clients = [
         {
-            id: "loftus",
-            name: "Loftus Elite Roofing",
-            category: "CONSTRUCTION & TRADES",
-            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/7e119676-cb9f-42d9-b6c3-5be8fec4ca00/public",
-            quoteSnippet: '"I operated for 25 years without a website."',
-            fullQuote: '"I operated for 25 years without a website. We\'ve always made it a point to deliver for our clients, and as a result, have always received enough referral business to avoid outside marketing costs. After speaking with MiltonHaines, and hearing their offer to build our website for free, and only pay a low fee to maintain and manage it, I thought it couldn\'t hurt anything to give it a try. We don\'t pay for ads, and we still get a few leads a month from the site, and have booked four new jobs over the past year. For 300 bucks a year, it\'s a no-brainer. We couldn\'t be happier with the results."',
-            annualCost: "$299.88",
-            monthlyCost: "$24.99/mo",
-            revenue: "$9,500",
-            roi: "3,068%",
-            scheduledRebuild: "January 2026"
-        },
-        {
             id: "danubia",
             name: "Danubia Cleaning LLC",
             category: "RECURRING SERVICE",
-            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/a51ecdc5-dc37-480e-5e4e-41e33fc04600/public",
-            v2Image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/a51ecdc5-dc37-480e-5e4e-41e33fc04600/public", // PLACEHOLDER
+            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/f9bd7a5b-2f17-449b-0378-4417c72baa00/public",
+            v2Image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/f9bd7a5b-2f17-449b-0378-4417c72baa00/public",
             status: "V2_LIVE",
             v2CompletedDate: "February 2026",
+            link: "https://www.danubiallc.com",
             quoteSnippet: '"The team at MiltonHaines has been a pleasure to work with."',
             fullQuote: '"The team at MiltonHaines has been a pleasure to work with. The website has yielded great results. We book 1 to 2 jobs a week, and it has become one of my best marketing tools. Not having to make a big upfront investment made it an easy choice for us. Alex went above and beyond for me - even helping me deal with Google business listing when they were giving me problems. They are a great company to work with, and we love having the website."',
             annualCost: "$299.88",
             monthlyCost: "$24.99/mo",
             revenue: "$11,760",
-            roi: "3,822%",
-            scheduledRebuild: "March 2026"
+            roi: "3,822%"
         },
         {
             id: "noriko",
             name: "Noriko's Nook",
             category: "NICHE EDUCATION",
-            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/92fe5398-8942-4fd8-c3a7-5038dcc96400/public",
-            v2Image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/92fe5398-8942-4fd8-c3a7-5038dcc96400/public", // PLACEHOLDER
+            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/671d9a89-48fc-43ee-5a16-269f9aadd400/public",
+            v2Image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/671d9a89-48fc-43ee-5a16-269f9aadd400/public",
             status: "V2_LIVE",
             v2CompletedDate: "February 2026",
+            link: "https://www.norikosnook.com",
             quoteSnippet: '"I\'ve been working with MH for almost two years now, and it has been a happy experience."',
             fullQuote: '"I\'ve been working with MH for almost two years now, and it has been a happy experience. I have signed 10 new students, who meet me weekly to learn Japanese. I enjoy my website and am very excited to see my new one next year."',
             annualCost: "$299.88",
             monthlyCost: "$24.99/mo",
             revenue: "$33,800",
-            roi: "11,171%",
-            scheduledRebuild: "May 2026"
+            roi: "11,171%"
         },
         {
-            id: "aimhigh",
-            name: "Aim High Hair Studio",
-            category: "LOCAL LIFESTYLE",
-            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/2ae2f759-535f-46ae-d94f-11e292761200/public",
-            quoteSnippet: '"I can\'t say enough good things about my relationship with MiltonHaines."',
-            fullQuote: '"I can\'t say enough good things about my relationship with MiltonHaines. They took a back seat, and let me have the website created exactly as I wanted it. I had to close my business for a few months due to a family emergency, and they immediately offered to pause my payments while I was closed. Who does that? I love my website, and have booked over 50 clients in the last year. It has been a blessing, and has been so helpful to my business."',
-            annualCost: "$299.88",
-            monthlyCost: "$24.99/mo",
-            revenue: "$9,880",
-            revenueContext: "(52 clients)",
-            roi: "3,195%",
-            scheduledRebuild: "June 2026"
+            id: "ibhk",
+            name: "I Believe / Hard Knox",
+            category: "COMBAT SPORTS ACADEMY",
+            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/5e94d87a-4f4a-4139-291a-a274ff1df000/public",
+            v2Image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/5e94d87a-4f4a-4139-291a-a274ff1df000/public",
+            status: "V2_LIVE",
+            v2CompletedDate: "February 2026",
+            link: "https://www.ibhkboxing.com",
+            isPortfolioOnly: true,
+            quoteSnippet: '"Transforming athletes through discipline and world-class training."',
+            fullQuote: '"Our digital infrastructure perfectly matches the intensity and professionalism of our gym. It gives us a platform to properly showcase our champions and run our youth programs efficiently."'
+        },
+        {
+            id: "iballroom",
+            name: "iBallroomDanceR",
+            category: "DANCE ACADEMY",
+            image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/599bbb76-7d4d-44ad-e2cd-d559c4aa3700/public",
+            v2Image: "https://imagedelivery.net/m5BQ9NwISdGmaMKgfNT6sA/599bbb76-7d4d-44ad-e2cd-d559c4aa3700/public",
+            status: "V2_LIVE",
+            v2CompletedDate: "February 2026",
+            link: "https://www.iballroomdancer.com",
+            isPortfolioOnly: true,
+            quoteSnippet: '"Elevating the online presence of competitive ballroom dance."',
+            fullQuote: '"We needed a website that could handle a complex 3D carousel, sophisticated class schedules, and a high-end booking flow. MiltonHaines delivered a beautiful interactive experience."'
         }
     ];
 
@@ -133,9 +132,9 @@ const Portfolio = () => {
                                     <div className="text-[10px] font-mono text-primary-gold mb-4 uppercase tracking-widest font-bold">
                                         {client.category}
                                     </div>
-                                    <h3 className="text-2xl font-heading font-bold text-white mb-4">
-                                        {client.name}
-                                    </h3>
+                                    <a href={client.link} target="_blank" rel="noopener noreferrer" className="block text-2xl font-heading font-bold text-white mb-4 hover:text-primary-gold transition-colors duration-300">
+                                        {client.name} <span className="text-sm border border-primary-gold/30 rounded px-2 py-0.5 ml-2 font-mono align-middle text-primary-gold/80 hover:bg-primary-gold/10">VIEW LIVE ↗</span>
+                                    </a>
 
                                     <p className="text-gray-300 text-sm italic mb-6">
                                         {client.quoteSnippet}
@@ -143,7 +142,7 @@ const Portfolio = () => {
 
                                     <button
                                         onClick={() => toggleExpand(client.id)}
-                                        className="text-primary-gold text-sm font-medium self-start hover:text-white transition-colors mb-4 flex items-center"
+                                        className="text-primary-gold text-sm font-medium self-start focus:outline-none hover:text-white transition-colors mb-4 flex items-center"
                                     >
                                         {isExpanded ? '- Close' : '+ Read Full Story'}
                                     </button>
@@ -160,35 +159,45 @@ const Portfolio = () => {
                                     {/* Spacer to push numbers to bottom if needed */}
                                     <div className="flex-grow"></div>
 
-                                    {/* The Numbers Box */}
+                                    {/* The Numbers / Project Details Box */}
                                     <div className="relative mt-4">
-                                        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-milton-black px-4 z-10">
-                                            <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">The Numbers</span>
-                                        </div>
-                                        <div className="border border-white/10 p-6 rounded-sm space-y-4 pt-8 bg-void/30">
-                                            <div className="flex justify-between items-center border-b border-white/5 pb-4">
-                                                <span className="text-gray-400 text-sm">Annual Cost:</span>
-                                                <div className="text-right">
-                                                    <span className="text-white font-bold text-lg">{client.annualCost}</span>
-                                                    <span className="text-gray-600 text-xs ml-2">({client.monthlyCost} x 12)</span>
+                                        {client.isPortfolioOnly ? (
+                                            <div className="border border-white/5 p-6 rounded-sm space-y-4 pt-6 bg-white/5 h-full flex flex-col justify-center items-center">
+                                                <div className="w-12 h-1 bg-primary-gold/30 mb-2"></div>
+                                                <p className="text-gray-400 font-mono text-sm tracking-widest text-center uppercase">Digital Infrastructure</p>
+                                                <p className="text-white/60 text-xs text-center border-t border-white/5 pt-4">Custom deployment explicitly honoring the unique technical and brand requirements of the client.</p>
+                                            </div>
+                                        ) : (
+                                            <>
+                                                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-milton-black px-4 z-10">
+                                                    <span className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">The Numbers</span>
                                                 </div>
-                                            </div>
+                                                <div className="border border-white/10 p-6 rounded-sm space-y-4 pt-8 bg-void/30">
+                                                    <div className="flex justify-between items-center border-b border-white/5 pb-4">
+                                                        <span className="text-gray-400 text-sm">Annual Cost:</span>
+                                                        <div className="text-right">
+                                                            <span className="text-white font-bold text-lg">{client.annualCost}</span>
+                                                            <span className="text-gray-600 text-xs ml-2">({client.monthlyCost} x 12)</span>
+                                                        </div>
+                                                    </div>
 
-                                            <div className="flex justify-between items-center border-b border-white/5 pb-4">
-                                                <span className="text-gray-400 text-sm">Revenue Generated:</span>
-                                                <div className="text-right">
-                                                    <span className="text-white font-bold text-lg">{client.revenue}</span>
-                                                    {client.revenueContext && (
-                                                        <span className="text-gray-500 text-xs ml-2">{client.revenueContext}</span>
-                                                    )}
+                                                    <div className="flex justify-between items-center border-b border-white/5 pb-4">
+                                                        <span className="text-gray-400 text-sm">Revenue Generated:</span>
+                                                        <div className="text-right">
+                                                            <span className="text-white font-bold text-lg">{client.revenue}</span>
+                                                            {client.revenueContext && (
+                                                                <span className="text-gray-500 text-xs ml-2">{client.revenueContext}</span>
+                                                            )}
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="flex justify-between items-center">
+                                                        <span className="text-gray-400 text-sm">ROI:</span>
+                                                        <span className="text-primary-gold font-bold text-2xl">{client.roi}</span>
+                                                    </div>
                                                 </div>
-                                            </div>
-
-                                            <div className="flex justify-between items-center">
-                                                <span className="text-gray-400 text-sm">ROI:</span>
-                                                <span className="text-primary-gold font-bold text-2xl">{client.roi}</span>
-                                            </div>
-                                        </div>
+                                            </>
+                                        )}
                                     </div>
                                 </div>
 
