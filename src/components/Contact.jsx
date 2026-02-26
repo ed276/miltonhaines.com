@@ -52,14 +52,35 @@ const Contact = () => {
         };
     }, []);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setFormState('sending');
 
-        // Simulate network request
-        setTimeout(() => {
-            setFormState('success');
-        }, 2000);
+        const form = e.target;
+        const data = new FormData(form);
+
+        try {
+            // Updated to use your Formspree URL
+            const response = await fetch("https://formspree.io/f/mnjbwjyp", {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setFormState('success');
+                form.reset(); // Clears the form for the next submission
+                setIsChamberMember(false); // Resets the checkbox state
+            } else {
+                setFormState('idle');
+                alert("Transmission failed. Please try again.");
+            }
+        } catch (error) {
+            setFormState('idle');
+            alert("Network error. Please try again.");
+        }
     };
 
     return (
@@ -151,6 +172,7 @@ const Contact = () => {
                                     <input
                                         type="text"
                                         required
+                                        name="name"
                                         className="w-full bg-void/50 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-primary-gold transition-colors font-mono placeholder-white/20"
                                         placeholder="ENTER_NAME"
                                     />
@@ -163,6 +185,7 @@ const Contact = () => {
                                     <input
                                         type="email"
                                         required
+                                        name="email"
                                         className="w-full bg-void/50 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-primary-gold transition-colors font-mono placeholder-white/20"
                                         placeholder="ENTER_EMAIL_ADDRESS"
                                     />
@@ -172,7 +195,7 @@ const Contact = () => {
                                     <label className="block text-xs font-mono text-primary-gold/70 uppercase tracking-widest">
                                         Objective // Project Vector
                                     </label>
-                                    <select className="w-full bg-void/50 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-primary-gold transition-colors font-mono appearance-none">
+                                    <select name="objective" className="w-full bg-void/50 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-primary-gold transition-colors font-mono appearance-none">
                                         <option>New Build Infrastructure</option>
                                         <option>System Redesign</option>
                                         <option>Maintenance Request</option>
@@ -186,6 +209,7 @@ const Contact = () => {
                                         <div className="relative flex items-center justify-center w-5 h-5 border border-white/30 rounded bg-transparent group-hover:border-primary-gold transition-colors">
                                             <input
                                                 type="checkbox"
+                                                name="is_chamber_member"
                                                 className="absolute inset-0 opacity-0 cursor-pointer"
                                                 checked={isChamberMember}
                                                 onChange={(e) => setIsChamberMember(e.target.checked)}
@@ -223,6 +247,7 @@ const Contact = () => {
                                     <textarea
                                         rows="4"
                                         required
+                                        name="message"
                                         className="w-full bg-void/50 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-primary-gold transition-colors font-mono placeholder-white/20 resize-none"
                                         placeholder="ENTER_DATA_PACKET..."
                                     ></textarea>
